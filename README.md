@@ -1,53 +1,50 @@
-Стартовый репозиторий для работы над проектом в «Акселераторе» профессии «Фронтенд-разработчик»
+## Getting Started
 
-## Начало работы
+1. Install node.js
+2. Check the node.js version with `node --version`
+3. Supported build version is 18+
+4. Install dependencies with
 
-1. Установите node.js
-2. Проверьте версию node.js с помощью `node --version`
-3. Поддерживаемая версия сборки 18+
-4. Установите зависимости с помощью
+   ```shell
+   npm i
+   ```
 
-```shell
-npm i
-```
+5. Run the project with
 
-5. Запустите проект с помощью 
+   ```shell
+   npm run dev
+   ```
 
-```shell
-npm run dev
-```
+6. Additional commands for working with the build:
 
-6. Дополнительные команды для работы со сборкой
+   - `npm run convert-rastr`: create webp versions of raster images in the `source/img/` folder;
+   - `npm run dev`: starts the development server;
+   - `npm run build`: builds an optimized version of the project in the `dist` folder;
+   - `npm run preview`: launches the server with the optimized version;
+   - the sprite with icons is assembled from files in the `source/img/sprite/` folder;
+   - to access the sprite from `html`, use the path `href="/__spritemap#sprite-{icon file name}"`;
 
-- `npm run convert-rastr`: создайте webp версии растровых изображений в папке `source/img/`;
-- `npm run dev` запускает сервер для разработки;
-- `npm run build` собирает оптимизированную версию проекта в папке `dist`;
-- `npm run preview` запускает сервер с оптимизированной версией;
-- спрайт с иконками собран из файлов в папке `source/img/sprite/`;
-- для доступа к спрайту из `html` используйте путь `href="/__spritemap#sprite-{название файла иконки}"`;
+7. The `index.html` file in the `source` folder contains tips on the structure of your project.
 
-7. В файле `index.html` в папке `source` описаны подсказки по структуре вашего проекта.
+## Self-checks
 
-## Самопроверки
+Pixel Perfect Testing
 
-Тестирование Pixel Perfect
-
-Запустить тестирование вашего проекта можно с помощью
+You can run the Pixel Perfect testing of your project using
 
 ```shell
 npm run test 
 ```
 
-Тестовый фреймворк обращается к адресу `localhost:3000` поэтому сервер должен быть запущен с `npm run dev`, запускайте команду тестирования в новом терминале, не закрывая сервер с проектом.
+The test framework connects to `localhost:3000`, so the server must be running with `npm run dev`. Run the testing command in a new terminal without closing the project server.
 
+The project includes many additional tools for self-checks. Use them while working and before submitting your project:
 
-В проекте используется множество дополнительных инструментов для самопроверки. Используйте их во время работы и перед отправкой вашего проекта:
-
-- `npm run w3c`: проверяет валидность HTML;
-- `npm run linthtml`: проверяет разметку по правилам linthtml;
-- `npm run html-validate`: проверяет HTML;
-- `npm run lint-bem`: проверяет БЭМ;
-- `npm run stylelint`: проверяет стили по правилам stylelint;
-- `npm run lint-js`: проверяет скрипты по правилам eslint;
-- `npm run ls-lint`: проверяет именование файлов и папок;
-- `npm run editorconfig`: проверяет editorconfig.
+- `npm run w3c`: checks HTML validity;
+- `npm run linthtml`: checks the markup using linthtml rules;
+- `npm run html-validate`: checks HTML;
+- `npm run lint-bem`: checks BEM;
+- `npm run stylelint`: checks styles according to stylelint rules;
+- `npm run lint-js`: checks scripts according to eslint rules;
+- `npm run ls-lint`: checks file and folder naming;
+- `npm run editorconfig`: checks editorconfig.
