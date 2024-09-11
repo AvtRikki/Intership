@@ -1,0 +1,43 @@
+@use "./variables";
+
+@mixin font-face($font-family, $font-weight, $font-style, $font-woff2-src) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    src: $font-woff2-src;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: variables.$view-port-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: variables.$view-port-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: variables.$view-port-tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin font-info($font-size, $line-height, $font-weight: 400) {
+  font-family: variables.$font-primary;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-style: normal;
+  font-weight: $font-weight;
+}
+
+@mixin list-base {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

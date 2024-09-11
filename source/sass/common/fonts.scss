@@ -1,0 +1,4 @@
+@use "../common/mixins";
+@include mixins.font-face("Manrope", 300, normal, url("../../fonts/manrope-300.woff2") format("woff2"));
+@include mixins.font-face("Manrope", 400, normal, url("../../fonts/manrope-400.woff2") format("woff2"));
+@include mixins.font-face("Manrope", 500, normal, url("../../fonts/manrope-500.woff2") format("woff2"));
