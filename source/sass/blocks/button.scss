@@ -1,0 +1,26 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.button {
+  @include mixins.font-info(14px, 14px, 500);
+
+  display: flex;
+  width: fit-content;
+  padding: 3px 3px 3px 30px;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 1px solid variables.$transparent-color;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  @include mixins.mobile {
+    gap: 20px;
+  }
+
+  @include mixins.tablet {
+    gap: 30px;
+  }
+}

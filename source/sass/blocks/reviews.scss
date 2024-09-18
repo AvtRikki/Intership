@@ -1,2 +1,8 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.reviews {
+  @include mixins.tablet {
+    padding-right: 0;
+  }
+}

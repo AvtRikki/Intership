@@ -1,0 +1,13 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  padding: 11px;
+  border-radius: 30px;
+  background-color: variables.$accent-color;
+}

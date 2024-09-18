@@ -1,0 +1,33 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.page {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.page__body {
+  @include mixins.font-info(14px, 20px);
+
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-width: variables.$view-port-mobile;
+  height: 100%;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  background-color: variables.$alternative-color;
+  color: variables.$text-color;
+}
+
+.page__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__footer,
+.page__header {
+  flex-shrink: 0;
+}

@@ -1,0 +1,19 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.container {
+  max-width: variables.$view-port-desktop-wide;
+  margin: 0 auto;
+
+  @include mixins.mobile {
+    padding: 0 15px;
+  }
+
+  @include mixins.tablet {
+    padding: 0 45px;
+  }
+
+  @include mixins.desktop {
+    padding: 0 100px;
+  }
+}

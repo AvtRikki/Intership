@@ -1,2 +1,8 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.news {
+  @include mixins.mobile {
+    padding-right: 0;
+  }
+}

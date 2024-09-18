@@ -1,0 +1,134 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.header {
+  position: relative;
+}
+
+.header__nav {
+  width: 100%;
+  height: auto;
+  background-color: variables.$transparent-color;
+  z-index: 2;
+
+  @include mixins.mobile {
+    padding-top: 20px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 30px;
+  }
+}
+
+.header__menu-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header__logo {
+  margin-top: 1px;
+}
+
+.header__menu-button {
+  position: relative;
+  min-width: 135px;
+  min-height: 54px;
+  padding-left: 20px;
+  gap: 20px;
+  background-color: variables.$accent-color;
+  border-color: variables.$primary-color;
+  color: variables.$primary-color;
+  z-index: 2;
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: variables.$primary-color;
+    border-radius: 44px;
+    padding: 19px 14px;
+    width: 46px;
+    height: 46px;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: variables.$accent-color;
+    mask-image: url("/__spritemap#sprite-menu-view");
+    mask-repeat: no-repeat;
+    right: 17px;
+    width: 16px;
+    height: 8px;
+  }
+}
+
+.header__menu-overlay {
+  display: none;
+}
+
+.header__menu-links-wrapper {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  z-index: 2;
+  background-color: variables.$primary-color;
+  border-radius: 16px;
+  padding: 23px 25px;
+
+  @include mixins.mobile {
+    width: 100%;
+  }
+
+  @include mixins.tablet {
+    max-width: 286px;
+  }
+}
+
+.header__menu-wrapper--menu-show {
+  grid-template-columns: 100%;
+  gap: 0;
+
+  & .header__logo {
+    display: none;
+  }
+
+  & .header__menu-button {
+    width: 100%;
+    background-color: variables.$primary-color;
+    color: variables.$accent-color;
+  }
+
+  & .header__menu-button:before {
+    background-color: variables.$accent-color;
+  }
+
+  & .header__menu-button:after {
+    mask-image: url("/__spritemap#sprite-cross-view");
+    width: 16px;
+    height: 16px;
+    background-color: variables.$primary-color;
+  }
+
+  & .header__menu-overlay {
+    display: block;
+    background-color: variables.$overlay-color;
+    position: absolute;
+    top: -30px;
+    left: -15px;
+    width: 100vw;
+    height: calc(100vh + 30px);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  & .header__menu-links-wrapper {
+    display: block;
+  }
+}
