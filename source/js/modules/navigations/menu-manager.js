@@ -6,7 +6,9 @@ export class MenuManager {
   #MENU_WRAPPER_PART = 'wrapper';
   #MENU_OVERLAY_PART = 'overlay';
   #MENU_LINKS_CONTAINER_PART = 'links-wrapper';
-  #MENU_LINK_PART = 'data-scroll-to';
+  #MENU_LINK_DATA_PART = 'data-scroll-to';
+  #MENU_LINK_PART = 'link';
+  #MENU_SUBITEMS_PART = 'accordion';
 
   constructor(className) {
     this.buttonClassName = Utils.getBEMElement(className, `menu-${this.#MENU_BUTTON_PART}`);
@@ -28,12 +30,35 @@ export class MenuManager {
   }
 
   #handleLinkSelected(event) {
-    if (event.target.hasAttribute(this.#MENU_LINK_PART)) {
-      const attribute = event.target.getAttribute(this.#MENU_LINK_PART);
+    if (event.target.hasAttribute(this.#MENU_LINK_DATA_PART)) {
+      const attribute = event.target.getAttribute(this.#MENU_LINK_DATA_PART);
       const targetSection = document.querySelector(attribute);
       if (targetSection) {
+        const linkClass = Array.from(event.target.classList).find((className) => className.endsWith(this.#MENU_LINK_PART));
+        if (linkClass) {
+          const currentLinkClass = Utils.getBEMModificator(linkClass, 'current');
+          document.querySelectorAll(`.${linkClass}`).forEach((link) => {
+            link.classList.remove(currentLinkClass);
+          });
+
+          event.target.classList.add(currentLinkClass);
+        }
+
         targetSection.scrollIntoView({ behavior: 'smooth' });
         this.#hideMenu();
+      }
+    }
+
+    const accordionClass = Array.from(event.target.classList).find((className) => className.endsWith(this.#MENU_SUBITEMS_PART));
+    if (accordionClass) {
+      const collapsedClass = Utils.getBEMModificator(accordionClass, 'collapsed');
+      const expandedClass = Utils.getBEMModificator(accordionClass, 'expanded');
+      if (event.target.classList.contains(collapsedClass)) {
+        event.target.classList.remove(collapsedClass);
+        event.target.classList.add(expandedClass);
+      } else {
+        event.target.classList.add(collapsedClass);
+        event.target.classList.remove(expandedClass);
       }
     }
   }
