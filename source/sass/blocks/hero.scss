@@ -1,2 +1,306 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.hero {
+  margin-top: -74px;
+}
+
+.hero__items {
+  @include mixins.list-base();
+
+  & .hero__item {
+    display: flex;
+  }
+}
+
+.hero__item {
+  position: relative;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @include mixins.mobile {
+    min-height: 568px;
+    padding-top: 74px;
+    padding-bottom: 20px;
+  }
+
+  @include mixins.tablet {
+    min-height: 1024px;
+    padding-top: 84px;
+  }
+
+  @include mixins.desktop {
+    min-height: 800px;
+  }
+}
+
+.hero__image-wrapper {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: variables.$overlay-color-alternative;
+  }
+}
+
+.hero__image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__pagination {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  width: fit-content;
+  height: fit-content;
+  background-color: variables.$accent-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    background-color: variables.$accent-color;
+  }
+
+  @include mixins.mobile {
+    padding: 10px 16px;
+    border-radius: 12px 12px 0 0;
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      right: -10px;
+      bottom: 0;
+    }
+  }
+
+  @include mixins.tablet {
+    padding: 14px 20px;
+    border-radius: 20px 20px 0 0;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+      right: -20px;
+      bottom: 0;
+    }
+  }
+}
+
+.hero__pagination-slide {
+  border: 2px solid variables.$primary-color;
+  background-color: variables.$transparent-color;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    border-color: variables.$accent-color;
+    background-color: variables.$primary-color;
+    opacity: 0.7;
+  }
+
+  &:focus {
+    border-color: variables.$primary-color;
+    background-color: variables.$primary-color;
+  }
+
+  &:active {
+    border-color: variables.$state-color-active;
+    background-color: variables.$state-color-active;
+  }
+
+  @include mixins.mobile {
+    width: 8px;
+    height: 8px;
+  }
+
+  @include mixins.tablet {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero__pagination-slide--active {
+  border-color: variables.$state-color-active;
+  background-color: variables.$state-color-active;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__title {
+  width: 100%;
+  margin: 0;
+  color: variables.$primary-color;
+  background-color: variables.$accent-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(22px, 26px);
+
+    padding: 20px 15px 16px 15px;
+    border-radius: 0 16px 16px 0;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(36px, 44px);
+
+    max-width: 659px;
+    padding: 30px 99px 24px 40px;
+    border-radius: 0 30px 30px 0;
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(54px, 62px);
+
+    max-width: 968px;
+    padding: 40px 138px 30px 50px;
+  }
+}
+
+.hero__info {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    background-color: variables.$accent-color;
+  }
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    background-color: variables.$transparent-color;
+    margin-top: -5px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: flex-start;
+    padding: 0 40px 35px;
+    gap: 30px;
+    background-color: variables.$accent-color;
+    border-radius: 0 0 30px 30px;
+    min-width: 591px;
+    max-width: 591px;
+    margin-top: -4px;
+
+    &::after {
+      width: 26px;
+      height: 26px;
+      right: -26px;
+      top: 4px;
+      transform: rotate(90deg);
+    }
+  }
+
+  @include mixins.desktop {
+    align-items: center;
+    padding: 0 50px 28px;
+    min-width: 772px;
+    max-width: 772px;
+    margin-top: -7px;
+
+    &::after {
+      top: 7px;
+    }
+  }
+}
+
+.hero__info p {
+  position: relative;
+  margin: 0;
+
+  @include mixins.mobile {
+    @include mixins.font-info(14px, 20px);
+
+    background-color: variables.$accent-color;
+    padding: 0 14px 10px;
+    border-radius: 0 0 14px;
+    width: 90%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      mask-image: url("/__spritemap#sprite-angle-view");
+      mask-repeat: no-repeat;
+      background-color: variables.$accent-color;
+      width: 10px;
+      height: 10px;
+      right: -10px;
+      top: 5px;
+      transform: rotate(90deg);
+    }
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(16px, 20px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(16px, 26px);
+  }
+}
+
+.hero__actions-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    content: "";
+    position: absolute;
+    mask-image: url("/__spritemap#sprite-angle-view");
+    mask-repeat: no-repeat;
+    background-color: variables.$accent-color;
+  }
+
+  @include mixins.mobile {
+    padding: 6px 15px 10px;
+    background-color: variables.$accent-color;
+    border-radius: 0 0 14px 14px;
+    max-width: 182px;
+    min-width: 182px;
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      right: -10px;
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.hero__action {
+  @include mixins.tablet {
+    margin-top: 4px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 0;
+  }
+}

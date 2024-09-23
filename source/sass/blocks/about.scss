@@ -1,2 +1,155 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.about {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 40px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 60px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.about__wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    padding-top: 2px;
+    gap: 30px;
+  }
+
+  @include mixins.tablet {
+    margin-top: -1px;
+
+  }
+
+  @include mixins.desktop {
+    margin-top: -2px;
+    flex-direction: row;
+  }
+}
+
+.about__header {
+  display: flex;
+  flex-direction: column;
+
+  & p {
+    margin: 0;
+  }
+
+  @include mixins.mobile {
+    gap: 15px;
+
+    & p {
+      @include mixins.font-info(16px, 22px)
+    }
+  }
+
+  @include mixins.tablet {
+    & p {
+      @include mixins.font-info(20px, 26px)
+    }
+  }
+
+  @include mixins.desktop {
+    & p {
+      @include mixins.font-info(16px, 26px)
+    }
+  }
+}
+
+.about__title {
+  margin: 0;
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(20px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(34px, 50px)
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(50px, 50px)
+  }
+}
+
+.about__info {
+  display: flex;
+  flex-direction: column;
+
+  & h3 {
+    margin: 0;
+    color: variables.$primary-color;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  @include mixins.mobile {
+    gap: 20px;
+
+    & h3 {
+      @include mixins.font-info(18px, 22px)
+    }
+
+    & p {
+      @include mixins.font-info(14px, 20px)
+    }
+  }
+
+  @include mixins.tablet {
+    gap: 30px;
+
+    & h3 {
+      @include mixins.font-info(28px, 28px)
+    }
+
+    & p {
+      @include mixins.font-info(16px, 20px)
+    }
+  }
+
+  @include mixins.desktop {
+    gap: 40px;
+
+    & h3 {
+      @include mixins.font-info(32px, 36px)
+    }
+
+    & p {
+      @include mixins.font-info(16px, 26px)
+    }
+  }
+}
+
+.about__benefits {
+  @include mixins.mobile {
+    padding: 42px 20px 40px 30px;
+  }
+
+  @include mixins.tablet {
+    padding: 62px 40px 40px 60px;
+  }
+
+  @include mixins.desktop {
+    padding: 72px 106px 32px 126px;
+  }
+}

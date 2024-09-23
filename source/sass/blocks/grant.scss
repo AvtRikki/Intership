@@ -1,2 +1,249 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.grant {
+  color: variables.$accent-color;
+  background: variables.$primary-color;
+
+  @include mixins.mobile {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+.grant__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    gap: 30px;
+  }
+
+  @include mixins.tablet {
+    gap: 40px;
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 138px;
+  }
+}
+
+.grant__contacts {
+  display: flex;
+  flex-direction: column;
+
+  & p {
+    margin: 0;
+    color: variables.$alternative-color;
+  }
+
+  @include mixins.mobile {
+    gap: 13px;
+
+    & p {
+      @include mixins.font-info(14px, 20px);
+    }
+  }
+
+  @include mixins.tablet {
+    gap: 28px;
+
+    & p {
+      @include mixins.font-info(16px, 20px);
+
+      max-width: 498px;
+    }
+  }
+
+  @include mixins.desktop {
+    gap: 29px;
+
+    & p {
+      @include mixins.font-info(16px, 26px);
+
+      max-width: 100%;
+    }
+  }
+}
+
+.grant__image-wrapper {
+  @include mixins.mobile {
+    margin-top: 12px;
+  }
+
+  @include mixins.tablet {
+    margin-top: 8px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 4px;
+  }
+}
+
+.grant__image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.grant__title {
+  margin: 0;
+  color: variables.$accent-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(20px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(34px, 50px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(50px, 50px);
+  }
+}
+
+.grant__info {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    margin-top: 4px;
+    gap: 26px;
+  }
+
+  @include mixins.tablet {
+    margin-top: 5px;
+    gap: 42px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 4px;
+    gap: 55px;
+  }
+}
+
+.grant__info-title {
+  margin: 0;
+
+  @include mixins.mobile {
+    @include mixins.font-info(18px, 22px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(28px, 28px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(32px, 36px);
+  }
+}
+
+.grant_requirements-list {
+  @include mixins.list-base();
+
+  padding: 0 0 0 20px;
+  counter-reset: steps;
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    row-gap: 15px;
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: 46.3% 46.4%;
+    row-gap: 25px;
+    column-gap: 47px;
+  }
+
+  @include mixins.desktop {
+    display: flex;
+    flex-direction: column;
+    row-gap: 23px;
+  }
+}
+
+.grant_requirements-item {
+  position: relative;
+  border: 1px solid variables.$alternative-color;
+  border-radius: 16px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  &::after {
+    position: absolute;
+    counter-increment: steps;
+    content: counter(steps);
+    text-align: center;
+    z-index: 1;
+    background-color: variables.$primary-color;
+  }
+
+  & p {
+    margin: 0;
+  }
+
+  @include mixins.mobile {
+    padding-left: 23px;
+    padding-right: 15px;
+
+    &::after {
+      @include mixins.font-info(18px, 18px);
+
+      width: 32px;
+      height: 32px;
+      padding: 6px 4px;
+      left: -16px;
+      top: -6px;
+    }
+
+    & p {
+      @include mixins.font-info(14px, 20px);
+    }
+  }
+
+  @include mixins.tablet {
+    padding: 25px 15px 25px 23px;
+
+
+
+
+    &::after {
+      @include mixins.font-info(22px, 22px, 500);
+
+      padding: 10px;
+      left: -21px;
+      top: -16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 30px;
+    }
+
+    & p {
+      @include mixins.font-info(16px, 20px);
+    }
+  }
+
+  @include mixins.desktop {
+    padding: 22px 60px 22px 23px;
+
+    & p {
+      @include mixins.font-info(16px, 26px);
+    }
+  }
+}

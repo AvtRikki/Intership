@@ -2,8 +2,6 @@
 @use "../common/mixins";
 
 .button {
-  @include mixins.font-info(14px, 14px, 500);
-
   display: flex;
   width: fit-content;
   padding: 3px 3px 3px 30px;
@@ -17,10 +15,170 @@
   text-decoration: none;
 
   @include mixins.mobile {
+    @include mixins.font-info(12px, 12px, 500);
+
     gap: 20px;
+    padding-left: 20px;
   }
 
   @include mixins.tablet {
+    @include mixins.font-info(14px, 14px, 500);
+
     gap: 30px;
+  }
+}
+
+.button--secondary,
+.button--primary {
+  position: relative;
+  background-color: variables.$transparent-color;
+  border-color: variables.$primary-color;
+  color: variables.$primary-color;
+  min-height: 42px;
+
+  & span {
+    padding-right: 58px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background-color: variables.$primary-color;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: variables.$accent-color;
+    mask-image: url("/__spritemap#sprite-arrow-view");
+    mask-repeat: no-repeat;
+    top: 50%;
+    transform-origin: center;
+    width: 10px;
+    height: 10px;
+    right: 14px;
+    transform: rotate(-45deg) translate(3px, -4px);
+  }
+
+  &:focus::after {
+    background-color: variables.$accent-color;
+    transform: translateY(-50%);
+  }
+
+  &:hover {
+    background-color: variables.$primary-color;
+    color: variables.$accent-color;
+  }
+
+  &:hover::before {
+    background-color: variables.$accent-color;
+  }
+
+  &:hover::after {
+    background-color: variables.$primary-color;
+    transform: translateY(-50%);
+  }
+
+  &:active {
+    background-color: variables.$primary-color;
+    color: rgba(variables.$accent-color, 0.7);
+  }
+
+  &:active::before {
+    background-color: variables.$accent-color;
+  }
+
+  &:active::after {
+    background-color: variables.$primary-color;
+    opacity: 70%;
+    transform: translateY(-50%);
+  }
+
+  &:disabled {
+    background-color: variables.$state-color-disabled;
+    border-color: variables.$state-color-disabled;
+    color: variables.$state-color-disabled;
+  }
+
+  &:disabled::before {
+    background-color: variables.$state-color-disabled;
+  }
+
+  &:disabled::after {
+    opacity: 60%;
+  }
+}
+
+.button--secondary {
+  border-color: variables.$transparent-color;
+
+  &:hover {
+    background-color: variables.$transparent-color;
+  }
+
+  &:active {
+    background-color: variables.$transparent-color;
+  }
+
+  &:disabled {
+    background-color: variables.$transparent-color;
+    border-color: variables.$transparent-color;
+  }
+}
+
+.button--arrows {
+  position: relative;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: variables.$primary-color;
+    mask-image: url("/__spritemap#sprite-arrow-view");
+    mask-repeat: no-repeat;
+    width: 10px;
+    height: 10px;
+  }
+
+  &:hover:after {
+    opacity: 70%;
+  }
+
+  &:focus {
+    background-color: variables.$accent-color;
+  }
+
+  &:active {
+    background-color: variables.$accent-color;
+  }
+
+  &:active:after {
+    opacity: 70%;
+  }
+
+  &:disabled:after {
+    background-color: variables.$state-color-disabled;
+  }
+}
+
+.button--arrow-prev {
+  &:after {
+    transform: rotate(180deg);
+    left: 6px;
+  }
+}
+
+.button--arrow-next {
+  &:after {
+    right: 6px;
   }
 }
