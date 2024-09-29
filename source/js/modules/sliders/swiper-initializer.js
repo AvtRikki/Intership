@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import {Pagination, Scrollbar, Navigation } from 'swiper/modules';
+import { Manipulation, Grid, Navigation, Pagination, Scrollbar } from 'swiper/modules';
 
 export class SwiperInitializer {
   #SWIPER_DATA_SLIDE = 'swiper-slide';
@@ -116,6 +116,52 @@ export class SwiperInitializer {
         1440: {
           spaceBetween: 32,
           allowTouchMove: false,
+        },
+      },
+    };
+  }
+
+  createNewsOptions(pagesClassName, prevSlideClassName, nextSlideClassName) {
+    return {
+      modules: [Manipulation, Grid, Navigation, Pagination],
+      pagination: {
+        el: `.${pagesClassName}`,
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<span class="${ className }">${ index + 1 }</span>`;
+        },
+        bulletClass: 'news__item--bullet',
+        bulletActiveClass: 'news__item--bullet-active',
+      },
+      navigation: {
+        nextEl: `.${nextSlideClassName}`,
+        prevEl: `.${prevSlideClassName}`,
+      },
+      observer: true,
+      slidesPerView: 'auto',
+      slideActiveClass: 'news__item--active',
+      slidePrevClass: 'news__item--prev',
+      breakpoints: {
+        320: {
+          spaceBetween: 20,
+          grid: {
+            rows: 2,
+            columns: 'auto',
+          },
+        },
+        768: {
+          spaceBetween: 30,
+          grid: {
+            rows: 2,
+            columns: 'auto',
+          },
+        },
+        1440: {
+          spaceBetween: 32,
+          grid: {
+            rows: 1,
+            columns: 'auto',
+          },
         },
       },
     };

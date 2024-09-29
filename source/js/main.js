@@ -15,3 +15,10 @@ const programsOptions = programsSlider.createProgramsOption(
   'programs__pagination-prev',
   'programs__pagination-next');
 programsSlider.initialize(programsOptions);
+
+const newsSlider = new SwiperInitializer('news__slider');
+const newsOptions = newsSlider.createNewsOptions(
+  'news__pagination-pages',
+  'news__pagination-prev',
+  'news__pagination-next');
+newsSlider.initialize(newsOptions);
