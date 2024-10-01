@@ -2,7 +2,151 @@
 @use "../common/mixins";
 
 .reviews {
+  @include mixins.mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
   @include mixins.tablet {
-    padding-right: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.reviews__wrapper {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  align-items: center;
+
+  @include mixins.mobile {
+    grid-template-columns: 70% auto;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: auto auto 54px;
+  }
+}
+
+.reviews__title {
+  margin: 0;
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(20px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(34px, 50px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(50px, 50px);
+  }
+}
+
+.reviews__slider {
+  width: 100%;
+  grid-column: 1/-1;
+
+  @include mixins.mobile {
+    margin-top: 32px;
+    margin-bottom: 30px;
+  }
+
+  @include mixins.tablet {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 46px;
+  }
+}
+
+.reviews__items {
+  @include mixins.list-base();
+
+  & .reviews__item {
+    display: flex;
+  }
+}
+
+.reviews__item {
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid variables.$primary-color;
+
+  @include mixins.mobile {
+    padding: 30px 14px 25px;
+  }
+
+  @include mixins.tablet {
+    max-width: 560px;
+    padding: 49px 48px 46px 49px;
+  }
+
+  @include mixins.desktop {
+    padding: 49px 51px 43px 49px;
+  }
+}
+
+.reviews__card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviews__pagination {
+  position: relative;
+  height: 2px;
+  grid-column: 1/-2;
+  background-color: variables.$overlay-color-alternative;
+
+  & div {
+    height: 2px;
+    cursor: pointer;
+    background-color: variables.$primary-color;
+  }
+
+  @include mixins.mobile {
+    display: none;
+  }
+
+  @include mixins.tablet {
+    width: calc(100% - 109px);
+
+    & div {
+      width: 324px;
+    }
+  }
+
+  @include mixins.desktop {
+    width: calc(100% - 52px);
+
+    & div {
+      width: 392px;
+    }
+  }
+}
+
+.reviews__pagination-actions {
+  display: flex;
+  justify-self: end;
+
+  @include mixins.mobile {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    gap: 8px;
+  }
+
+  @include mixins.tablet {
+    grid-column: 3/-1;
+    gap: 10px;
   }
 }

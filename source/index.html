@@ -688,12 +688,12 @@
             </button>
           </div>
         </section>
-        <section class="faq" id="faq" data-test="FAQ">
+        <section class="faq container" id="faq" data-test="FAQ">
           <h2 class="faq__title">Вопросы и ответы</h2>
           <ul class="faq__items">
             <li class="faq__item">
               <div class="faq__wrapper">
-                <div class="faq__title">
+                <div class="faq__sub-title">
                   <h3>Кто организатор? Какие сроки у программы?</h3>
                   <button class="faq__action" type="button">
                     <span class="visually-hidden">Узнать ответ.</span>
@@ -706,7 +706,7 @@
             </li>
             <li class="faq__item">
               <div class="faq__wrapper">
-                <div class="faq__title">
+                <div class="faq__sub-title">
                   <h3>Что такое грант на&nbsp;обучение?</h3>
                   <button class="faq__action" type="button">
                     <span class="visually-hidden">Узнать ответ.</span>
@@ -719,7 +719,7 @@
             </li>
             <li class="faq__item faq__item--expanded">
               <div class="faq__wrapper">
-                <div class="faq__title">
+                <div class="faq__sub-title">
                   <h3>Как определяется стоимость программы?</h3>
                   <button class="faq__action" type="button">
                     <span class="visually-hidden">Узнать ответ.</span>
@@ -732,7 +732,7 @@
             </li>
             <li class="faq__item">
               <div class="faq__wrapper">
-                <div class="faq__title">
+                <div class="faq__sub-title">
                   <h3>Признаётся ли учёба в&nbsp;рамках проекта для дальнейшего обучения?</h3>
                   <button class="faq__action" type="button">
                     <span class="visually-hidden">Узнать ответ.</span>
@@ -745,7 +745,7 @@
             </li>
             <li class="faq__item">
               <div class="faq__wrapper">
-                <div class="faq__title">
+                <div class="faq__sub-title">
                   <h3>Как выглядит полный процесс регистрации на&nbsp;программу «Стажировка»?</h3>
                   <button class="faq__action" type="button">
                     <span class="visually-hidden">Узнать ответ.</span>
@@ -758,7 +758,7 @@
             </li>
           </ul>
         </section>
-        <section class="reviews" id="reviews" data-test="reviews">
+        <section class="reviews container" id="reviews" data-test="reviews">
           <div class="reviews__wrapper">
             <h2 class="reviews__title">Отзывы</h2>
             <div class="reviews__slider swiper">
@@ -778,16 +778,17 @@
                                height="60" alt="Лола Алекс.">
                         </picture>
                       </div>
+                      <p class="review-card__header-author">
+                        Лола<br>Алекс
+                      </p>
                       <div class="review-card__header-wrapper">
-                        <div class="review-card__header">
-                          <div class="review-card__header-author">
-                            <span>Программа</span>
-                            <span>Masa Art Challenge</span>
-                          </div>
-                          <div class="review-card__header-date">
-                            <span>Дата</span>
-                            <span>Осень 2022</span>
-                          </div>
+                        <div class="review-card__header-program">
+                          <span class="review-card__header-program-name">Программа</span>
+                          <span class="review-card__header-program-value">Masa Art Challenge</span>
+                        </div>
+                        <div class="review-card__header-date">
+                          <span class="review-card__header-date-name">Дата</span>
+                          <span class="review-card__header-date-value">Осень 2022</span>
                         </div>
                       </div>
                     </div>
@@ -813,14 +814,17 @@
                         </picture>
                       </div>
                       <div class="review-card__header-wrapper">
-                        <div class="review-card__header">
-                          <div class="review-card__header-author">
-                            <span>Программа</span>
-                            <span>Volunteer Chance</span>
+                        <p class="review-card__header-author">
+                          Давид<br>Иванов
+                        </p>
+                        <div class="review-card__header-wrapper">
+                          <div class="review-card__header-program">
+                            <span class="review-card__header-program-name">Программа</span>
+                            <span class="review-card__header-program-value">Volunteer Chance</span>
                           </div>
                           <div class="review-card__header-date">
-                            <span>Дата</span>
-                            <span>Лето 2022</span>
+                            <span class="review-card__header-date-name">Дата</span>
+                            <span class="review-card__header-date-value">Лето 2022</span>
                           </div>
                         </div>
                       </div>
@@ -833,20 +837,18 @@
                 </li>
               </ul>
             </div>
-            <div class="reviews__pagination">
-              <div class="reviews__pagination-pages"></div>
-              <div class="reviews__pagination-actions">
-                <button class="reviews__pagination-button-prev button button--prev" type="button">
-                  <span class="visually-hidden">Предыдущий следующий слайд.</span>
-                </button>
-                <button class="reviews__pagination-button-next button button--next" type="button">
-                  <span class="visually-hidden">Показать следующий слайд.</span>
-                </button>
-              </div>
+            <div class="reviews__pagination"></div>
+            <div class="reviews__pagination-actions">
+              <button class="reviews__pagination-prev button button--arrows button--arrow-prev" type="button">
+                <span class="visually-hidden">Предыдущий следующий слайд.</span>
+              </button>
+              <button class="reviews__pagination-next button button--arrows button--arrow-next" type="button">
+                <span class="visually-hidden">Показать следующий слайд.</span>
+              </button>
             </div>
           </div>
         </section>
-        <section class="contacts" id="contacts" data-test="contacts">
+        <section class="contacts container" id="contacts" data-test="contacts">
           <div class="contacts__wrapper">
             <div class="contacts__content">
               <h2 class="contacts__title">Контакты</h2>

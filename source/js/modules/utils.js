@@ -6,4 +6,8 @@ export class Utils {
   static getBEMElement(className, element) {
     return `${className}__${element}`;
   }
+
+  static isParagraph(element) {
+    return element.nodeName.toLowerCase() === 'p';
+  }
 }

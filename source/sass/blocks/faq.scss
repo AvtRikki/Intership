@@ -1,2 +1,250 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.faq {
+  @include mixins.mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.faq__title {
+  margin: 0;
+  text-align: center;
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(20px, 20px);
+
+    margin-bottom: 25px;
+    padding-top: 8px;
+    padding-right: 15px;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(34px, 50px);
+
+    margin-bottom: 29px;
+    padding-top: 0;
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(50px, 50px);
+
+    margin-bottom: 44px;
+    padding-top: 4px;
+  }
+}
+
+.faq__items {
+  @include mixins.list-base();
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__wrapper {
+  cursor: pointer;
+  border: 2px solid variables.$primary-color;
+  background-color: variables.$transparent-color;
+
+  @include mixins.mobile {
+    border-radius: 14px;
+    padding: 19px 14px 19px 13px;
+  }
+
+  @include mixins.tablet {
+    border-radius: 16px;
+    padding: 29px 30px;
+  }
+
+  @include mixins.desktop {
+    padding: 39px;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: variables.$accent-color;
+  }
+
+  &:active {
+    color: variables.$state-color-active;
+    background-color: variables.$accent-color;
+  }
+}
+
+.faq__item--expanded .faq__wrapper {
+  background-color: variables.$primary-color;
+}
+
+.faq__sub-title {
+  display: grid;
+  grid-template-columns: auto min-content;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq__sub-title h3 {
+  margin: 0;
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(16px, 18px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(22px, 26px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(28px, 34px);
+
+    max-width: 700px;
+  }
+}
+
+.faq__item--expanded .faq__sub-title h3 {
+  color: variables.$accent-color;
+}
+
+.faq__action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid variables.$primary-color;
+  background-color: variables.$primary-color;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: variables.$accent-color;
+  }
+
+  &::after {
+    width: 1px;
+    height: 18px;
+  }
+
+  &::before {
+    width: 18px;
+    height: 1px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: variables.$transparent-color;
+  }
+
+  &:active {
+    border-color: variables.$state-color-active;
+    background-color: variables.$state-color-active;
+  }
+
+  &:disabled {
+    border-color: variables.$state-color-disabled;
+    background-color: variables.$state-color-disabled;
+  }
+}
+
+.faq__action:hover::after,
+.faq__action:hover::before,
+.faq__action:focus::after,
+.faq__action:focus::before {
+  background-color: variables.$primary-color;
+}
+
+.faq__action:active::after,
+.faq__action:active::before {
+  background-color: variables.$accent-color;
+}
+
+.faq__item--expanded .faq__action {
+  background-color: variables.$accent-color;
+
+  &::after {
+    background-color: variables.$transparent-color;
+  }
+
+  &::before {
+    background-color: variables.$primary-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: variables.$transparent-color;
+    border-color: variables.$accent-color;
+  }
+
+  &:active {
+    background-color: variables.$accent-color;
+    border-color: variables.$accent-color;
+  }
+}
+
+.faq__item--expanded .faq__action:hover::before,
+.faq__item--expanded .faq__action:focus::before {
+  background-color: variables.$accent-color;
+}
+
+.faq__item--expanded .faq__action:active::after {
+  background-color: variables.$transparent-color;
+}
+
+.faq__item--expanded .faq__action:active::before {
+  background-color: variables.$state-color-active;
+}
+
+.faq__description {
+  display: none;
+}
+
+.faq__item--expanded .faq__description {
+  display: block;
+}
+
+.faq__description p {
+  margin-bottom: 0;
+
+  @include mixins.mobile {
+    @include mixins.font-info(14px, 20px);
+    margin-top: 15px;
+    padding-right: 20px;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(16px, 20px);
+    margin-top: 16px;
+    padding-right: 36px;
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(16px, 26px);
+    margin-top: 13px;
+  }
+}
+
+.faq__item--expanded .faq__description {
+
+}
+
+.faq__item--expanded .faq__description p {
+  color: variables.$accent-color;
+}

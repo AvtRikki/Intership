@@ -1,0 +1,149 @@
+@use "../common/variables";
+@use "../common/mixins";
+
+.review-card__header {
+  display: grid;
+  width: 100%;
+  align-items: center;
+
+  @include mixins.mobile {
+    grid-template-columns: 60px auto;
+    grid-auto-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  @include mixins.tablet {
+    grid-template-columns: 90px auto auto;
+    grid-auto-rows: auto;
+    gap: 15px;
+  }
+}
+
+.review-card__image-wrapper {
+  grid-column: 1/2;
+  width: fit-content;
+  object-fit: cover;
+}
+
+.review-card__header-author {
+  grid-column: 2/3;
+  margin: 0;
+  padding: 0;
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(14px, 18px)
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(20px, 24px)
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(18px, 24px)
+  }
+}
+
+.review-card__header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+
+  @include mixins.mobile {
+    margin-top: 2px;
+    grid-column: 1/-1;
+    margin-left: 0;
+  }
+
+  @include mixins.tablet {
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: 2px;
+    grid-column: 3/4;
+  }
+
+  @include mixins.desktop {
+    margin-top: 2px;
+  }
+}
+
+.review-card__header-date,
+.review-card__header-program {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    row-gap: 7px;
+  }
+
+  @include mixins.tablet {
+    row-gap: 4px;
+  }
+
+  @include mixins.desktop {
+    row-gap: 5px;
+  }
+}
+
+.review-card__header-program-name,
+.review-card__header-date-name {
+  @include mixins.font-info(12px, 12px);
+
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: variables.$primary-color;
+}
+
+.review-card__header-program-value,
+.review-card__header-date-value {
+  @include mixins.mobile {
+    @include mixins.font-info(12px, 14px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(14px, 20px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(14px, 18px);
+  }
+}
+
+.review-card__content h3 {
+  color: variables.$primary-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(16px, 18px);
+
+    margin-bottom: 15px;
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(20px, 24px);
+
+    margin-bottom: 16px;
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(24px, 26px);
+
+    margin-bottom: 14px;
+  }
+}
+
+.review-card__content p {
+  margin: 0;
+
+  @include mixins.mobile {
+    @include mixins.font-info(14px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(16px, 20px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(16px, 26px);
+  }
+}

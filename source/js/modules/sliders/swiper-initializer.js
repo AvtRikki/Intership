@@ -166,4 +166,44 @@ export class SwiperInitializer {
       },
     };
   }
+
+  createReviewsSlider(scrollbarName, prevSlideClassName, nextSlideClassName) {
+    return {
+      modules: [Scrollbar, Navigation],
+      keyboard: true,
+      spaceBetween: 20,
+      scrollbar: {
+        el: `.${scrollbarName}`,
+        draggable: true,
+        dragSize: 392,
+        hide: false,
+      },
+      navigation: {
+        nextEl: `.${nextSlideClassName}`,
+        prevEl: `.${prevSlideClassName}`,
+      },
+      slidesPerView: 'auto',
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          scrollbar: {
+            el: '',
+            enabled: false,
+          },
+        },
+        768: {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          scrollbar: {
+            dragSize: 324,
+          },
+        },
+        1440: {
+          slidesPerView: 2,
+          spaceBetween: 32,
+        },
+      },
+    };
+  }
 }

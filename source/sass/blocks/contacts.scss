@@ -1,2 +1,195 @@
 @use "../common/variables";
 @use "../common/mixins";
+
+.contacts {
+  color: variables.$accent-color;
+  background: variables.$primary-color;
+
+  @include mixins.mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.tablet {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @include mixins.desktop {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    gap: 30px;
+  }
+
+  @include mixins.tablet {
+    gap: 30px;
+  }
+
+  @include mixins.desktop {
+    gap: 40px;
+  }
+}
+
+.contacts__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    row-gap: 31px;
+    padding-bottom: 25px;
+  }
+
+  @include mixins.tablet {
+    row-gap: 30px;
+    padding-bottom: 27px;
+  }
+
+  @include mixins.desktop {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: min-content auto;
+    justify-content: space-between;
+    padding-bottom: 33px;
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(variables.$accent-color, 20%);
+  }
+}
+
+.contacts__title {
+  margin: 0;
+
+  @include mixins.mobile {
+    @include mixins.font-info(20px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(34px, 50px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(50px, 50px);
+  }
+}
+
+.contacts__items {
+  @include mixins.list-base();
+
+  @include mixins.mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  @include mixins.tablet {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: 91px;
+  }
+
+  @include mixins.desktop {
+    display: flex;
+    gap: 54px;
+    flex-wrap: wrap;
+  }
+}
+
+.contacts__item {
+  display: flex;
+  flex-direction: column;
+
+  @include mixins.mobile {
+    row-gap: 8px;
+
+    &:first-child {
+      max-width: 230px;
+    }
+  }
+
+  @include mixins.tablet {
+    row-gap: 18px;
+
+    &:first-child {
+      max-width: 263px;
+    }
+  }
+
+  @include mixins.desktop {
+    row-gap: 15px;
+
+    &:first-child {
+      max-width: 263px;
+    }
+  }
+}
+
+.contacts__sub-title {
+  @include mixins.font-info(12px, 12px);
+
+  margin: 0;
+  letter-spacing: 0.12px;
+  text-transform: uppercase;
+  color: rgba(variables.$alternative-color, 80%);
+}
+
+.contacts__info {
+  text-decoration: none;
+  color: variables.$accent-color;
+
+  @include mixins.mobile {
+    @include mixins.font-info(14px, 20px);
+  }
+
+  @include mixins.tablet {
+    @include mixins.font-info(16px, 20px);
+  }
+
+  @include mixins.desktop {
+    @include mixins.font-info(16px, 26px);
+  }
+}
+
+.contacts__item a {
+  &:hover {
+    color: rgba(variables.$accent-color, 80%);
+  }
+
+  &:focus {
+    color: variables.$text-color;
+  }
+
+  &:active {
+    color: variables.$accent-color;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+}
+
+.contacts__image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.contacts__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
