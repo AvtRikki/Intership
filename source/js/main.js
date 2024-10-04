@@ -2,6 +2,7 @@ import { MenuManager } from './modules/navigations/menu-manager.js';
 import 'swiper/css';
 import {SwiperInitializer} from './modules/sliders/swiper-initializer.js';
 import {AccordionMananger} from './modules/accordions/accordion-mananger.js';
+import {CustomSelect} from './modules/selectors/custom-select.js';
 
 const menuManager = new MenuManager('header');
 menuManager.initialize();
@@ -33,3 +34,5 @@ reviewsSlider.initialize(reviewsOptions);
 
 const accordionManager = new AccordionMananger('faq__items');
 accordionManager.initalize('faq__item');
+
+new CustomSelect('custom-select');

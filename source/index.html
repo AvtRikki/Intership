@@ -230,16 +230,16 @@
                 <p>учебных и рабочих, разной длительностью от 3 месяцев до 1 года</p>
               </li>
               <li class="benefits__item">
-                <h3>Более<br class="show-br-mobile"> 3000 участников</h3>
-                <p>уже успешно прошли программу от «Стажировка» и остались в разных странах</p>
-              </li>
-              <li class="benefits__item">
-                <h3>От 4 200 $ до 8 400 $</h3>
-                <p>грант всем участникам для комфортного прохождения программы</p>
+                <h3>Более 3000 участников</h3>
+                <p>уже успешно прошли программу от «Стажировка» и&nbsp;остались в разных странах</p>
               </li>
               <li class="benefits__item">
                 <h3>Участники из 60 стран</h3>
-                <p>студенты со всего мира приезжают напрограмму «Стажировка»</p>
+                <p>студенты со всего мира приезжают на программу «Стажировки» от 3 месяцев до 1 года</p>
+              </li>
+              <li class="benefits__item">
+                <h3>От 4 200 $<br>до 8 400 $</h3>
+                <p>грант всем участникам для&nbsp;комфортного<span class="benefits__separator">&nbsp;</span>прохождения программы</p>
               </li>
             </ul>
           </div>
@@ -369,7 +369,7 @@
               </div>
             </div>
             <div class="grant__info">
-              <h3 class="grant__info-title">Чтобы получить грант на обучение, вам нужно:</h3>
+              <h3 class="grant__info-title">Чтобы получить грант на&nbsp;обучение, вам нужно:</h3>
               <ul class="grant_requirements-list">
                 <li class="grant_requirements-item">
                   <p>Быть в возрасте от 16 до 30 лет</p>
@@ -381,7 +381,7 @@
                   <p>Иметь документально подтверждённое отсутствие судимости и пройти консульскую проверку</p>
                 </li>
                 <li class="grant_requirements-item">
-                  <p>За последние 2 года быть не больше 3х месяцев подряд непрерывно в одной стране</p>
+                  <p>За последние 2 года быть не&nbsp;больше 3х месяцев подряд непрерывно в одной стране</p>
                 </li>
               </ul>
             </div>
@@ -885,32 +885,34 @@
             </div>
           </div>
         </section>
-        <section class="form" id="form" data-test="form">
+        <section class="form container" id="form" data-test="form">
           <div class="form__wrapper">
-            <div class="form__content">
+            <div class="form__content form__content--dark">
               <h2 class="form__title">Напишите нам</h2>
               <p class="form__description">Оставьте ваши контакты, если остались вопросы мы на них ответим!</p>
-              <form class="contacts-form form" id="contacts-form" action="https://echo.htmlacademy.ru/" method="post">
+              <form class="form__contacts" id="contacts-form" action="https://echo.htmlacademy.ru/" method="post">
                 <div class="form__input-wrapper">
                   <label class="form__label" for="name">Имя</label>
-                  <input class="form__input" type="text" name="name" id="name" placeholder="Имя" required>
+                  <input class="form__input form__input--text" type="text" name="name" id="name" required>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="phone">Телефон</label>
-                  <input class="form__input" type="text" name="phone" id="phone" placeholder="Телефон" required>
+                  <input class="form__input form__input--text" type="text" name="phone" id="phone" required>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="message">Ваше сообщение</label>
-                  <textarea class="form__input" type="text" name="message" id="message" placeholder="Ваше сообщение" required></textarea>
+                  <textarea class="form__input form__input--text-area" type="text" name="message" id="message" required></textarea>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="city">Выберите город</label>
-                  <select class="form__input form__input-drop-down" name="city" id="city">
-                    <option value="empty"></option>
-                    <option value="kulebaki">Кулебаки</option>
-                    <option value="murom">Муром</option>
-                    <option value="arzamas">Арзамас</option>
-                  </select>
+                  <div class="form__input form__input-drop-down custom-select">
+                    <select name="city" id="city">
+                      <option value="empty"></option>
+                      <option value="kulebaki">Кулебаки</option>
+                      <option value="murom">Муром</option>
+                      <option value="arzamas">Арзамас</option>
+                    </select>
+                  </div>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="signature">
@@ -918,7 +920,7 @@
                     <span class="form__label-text">Я согласен на обработку моих персональных данных</span>
                   </label>
                 </div>
-                <button class="form__action button button--secondary">
+                <button class="form__action button button--secondary" type="submit">
                   <span>Отправить</span>
                 </button>
               </form>

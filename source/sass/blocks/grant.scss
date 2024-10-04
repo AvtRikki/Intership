@@ -6,7 +6,7 @@
   background: variables.$primary-color;
 
   @include mixins.mobile {
-    padding-top: 70px;
+    padding-top: 71px;
     padding-bottom: 70px;
   }
 
@@ -50,7 +50,7 @@
   }
 
   @include mixins.mobile {
-    gap: 13px;
+    gap: 14px;
 
     & p {
       @include mixins.font-info(14px, 20px);
@@ -80,7 +80,7 @@
 
 .grant__image-wrapper {
   @include mixins.mobile {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 
   @include mixins.tablet {
@@ -120,8 +120,8 @@
   flex-direction: column;
 
   @include mixins.mobile {
-    margin-top: 4px;
-    gap: 26px;
+    margin-top: 5px;
+    gap: 30px;
   }
 
   @include mixins.tablet {
@@ -182,8 +182,8 @@
   position: relative;
   border: 1px solid variables.$alternative-color;
   border-radius: 16px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
   &::after {
     position: absolute;
@@ -199,7 +199,7 @@
   }
 
   @include mixins.mobile {
-    padding-left: 23px;
+    padding-left: 25px;
     padding-right: 15px;
 
     &::after {
@@ -219,9 +219,6 @@
 
   @include mixins.tablet {
     padding: 25px 15px 25px 23px;
-
-
-
 
     &::after {
       @include mixins.font-info(22px, 22px, 500);

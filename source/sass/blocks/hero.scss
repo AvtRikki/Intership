@@ -2,7 +2,13 @@
 @use "../common/mixins";
 
 .hero {
-  margin-top: -74px;
+  @include mixins.mobile {
+    margin-top: -74px;
+  }
+
+  @include mixins.tablet {
+    margin-top: -84px;
+  }
 }
 
 .hero__items {
@@ -151,7 +157,7 @@
   @include mixins.mobile {
     @include mixins.font-info(22px, 26px);
 
-    padding: 20px 15px 16px 15px;
+    padding: 20px 15px 16px 14px;
     border-radius: 0 16px 16px 0;
   }
 
@@ -235,12 +241,12 @@
   margin: 0;
 
   @include mixins.mobile {
-    @include mixins.font-info(14px, 20px);
+    @include mixins.font-info(16px, 20px);
 
     background-color: variables.$accent-color;
-    padding: 0 14px 10px;
+    padding: 5px 14px 15px;
     border-radius: 0 0 14px;
-    width: 90%;
+    width: 92%;
 
     &::after {
       content: "";
@@ -279,11 +285,11 @@
   }
 
   @include mixins.mobile {
-    padding: 6px 15px 10px;
+    padding: 8px 15px 12px;
     background-color: variables.$accent-color;
     border-radius: 0 0 14px 14px;
-    max-width: 182px;
-    min-width: 182px;
+    max-width: 184px;
+    min-width: 184px;
 
     &::after {
       width: 10px;

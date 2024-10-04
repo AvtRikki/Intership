@@ -30,7 +30,7 @@
 
   @include mixins.mobile {
     padding-top: 2px;
-    gap: 30px;
+    gap: 40px;
   }
 
   @include mixins.tablet {
@@ -53,7 +53,7 @@
   }
 
   @include mixins.mobile {
-    gap: 15px;
+    gap: 13px;
 
     & p {
       @include mixins.font-info(16px, 22px)
@@ -140,9 +140,15 @@
   }
 }
 
+.about__action {
+  @include mixins.mobile {
+    margin-top: 10px;
+  }
+}
+
 .about__benefits {
   @include mixins.mobile {
-    padding: 42px 20px 40px 30px;
+    padding: 42px 20px 40px;
   }
 
   @include mixins.tablet {

@@ -3,18 +3,18 @@
 
 .news {
   @include mixins.mobile {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 43px;
+    padding-bottom: 50px;
   }
 
   @include mixins.tablet {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   @include mixins.desktop {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -278,7 +278,6 @@
   display: flex;
   flex-direction: column;
   padding-top: 16px;
-  overflow-y: auto;
   height: fit-content;
   background-color: variables.$transparent-color;
 

@@ -4,7 +4,7 @@
 .button {
   display: flex;
   width: fit-content;
-  padding: 3px 3px 3px 30px;
+  padding: 6px 3px 3px 30px;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
@@ -34,10 +34,10 @@
   background-color: variables.$transparent-color;
   border-color: variables.$primary-color;
   color: variables.$primary-color;
-  min-height: 42px;
+  min-height: 44px;
 
   & span {
-    padding-right: 58px;
+    padding-right: 55px;
   }
 
   &:before {

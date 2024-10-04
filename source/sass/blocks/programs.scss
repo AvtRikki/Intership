@@ -3,7 +3,7 @@
 
 .programs {
   @include mixins.mobile {
-    padding-top: 50px;
+    padding-top: 57px;
     padding-bottom: 50px;
   }
 
@@ -52,8 +52,13 @@
 
 .programs__action {
   @include mixins.mobile {
+    min-width: 205px;
     grid-column: 1/2;
     grid-row: 3/4;
+
+    & span {
+      padding-left: 10px;
+    }
   }
 
   @include mixins.tablet {
@@ -67,7 +72,7 @@
   grid-column: 1/-1;
 
   @include mixins.mobile {
-    margin-top: 32px;
+    margin-top: 34px;
     margin-bottom: 30px;
   }
 
@@ -235,6 +240,18 @@
   }
 }
 
+.programs__info-action {
+  &:before {
+    width: 30px;
+    height: 30px;
+    right: 0;
+  }
+
+  &:after {
+    right: 8px;
+  }
+}
+
 .programs__pagination {
   position: relative;
   height: 2px;
@@ -273,9 +290,10 @@
   justify-self: end;
 
   @include mixins.mobile {
+    margin-top: -5px;
     grid-row: 1/2;
     grid-column: 2/3;
-    gap: 8px;
+    gap: 6px;
   }
 
   @include mixins.tablet {
