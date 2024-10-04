@@ -905,7 +905,7 @@
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="city">Выберите город</label>
-                  <div class="form__input form__input-drop-down custom-select">
+                  <div class="form__input form__input-drop-down custom-select" tabindex="0">
                     <select name="city" id="city">
                       <option value="empty"></option>
                       <option value="kulebaki">Кулебаки</option>
@@ -916,7 +916,8 @@
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="signature">
-                    <input class="form__input visually-hidden" type="checkbox" name="signature" id="signature">
+                    <input class="form__input visually-hidden" type="checkbox" name="signature" id="signature" required>
+                    <span class="form__input-checkbox"></span>
                     <span class="form__label-text">Я согласен на обработку моих персональных данных</span>
                   </label>
                 </div>

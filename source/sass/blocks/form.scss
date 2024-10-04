@@ -89,6 +89,12 @@
   }
 }
 
+.form__label-text {
+  @include mixins.font-info(12px, 12px);
+
+  vertical-align: text-top;
+}
+
 .form__input {
   @include mixins.font-info(14px, 14px);
 
@@ -130,6 +136,33 @@
   @include mixins.tablet {
     min-height: 96px;
   }
+}
+
+.form__input-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.form__input:user-invalid+.form__input-checkbox {
+  outline: 1px solid variables.$state-color-error;
+  background-color: rgba(variables.$state-color-error, 20%);
+}
+
+.form__input:disabled+.form__input-checkbox {
+  outline: 1px solid variables.$state-color-disabled;
+  background-color: variables.$state-color-disabled;
+}
+
+.form__action {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 10px);
+  min-height: 56px;
 }
 
 .form__content--dark {
@@ -226,5 +259,86 @@
 
   &:disabled .form__label {
     color: rgba(variables.$alternative-color, 60%);
+  }
+}
+
+.form__content--dark .form__input+.form__input-checkbox {
+  outline: 1px solid rgba(variables.$accent-color, 70%);
+  background-color: variables.$transparent-color;
+}
+
+.form__content--dark .form__input:hover+.form__input-checkbox {
+  outline: 1px solid variables.$accent-color;
+  background-color: variables.$transparent-color;
+}
+
+.form__content--dark .form__input:checked+.form__input-checkbox {
+  outline: 1px solid variables.$accent-color;
+  background-color: variables.$accent-color;
+
+  &:before {
+    content: "";
+    position: absolute;
+    mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDMuOTQ3MzcgOEw5IDIiIHN0cm9rZT0icmVkIi8+Cjwvc3ZnPgo=");
+    mask-repeat: no-repeat;
+    background-color: variables.$primary-color;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.form__content--dark .form__input:checked:hover+.form__input-checkbox {
+  background-color: variables.$transparent-color;
+
+  &:before {
+    background-color: variables.$accent-color;
+  }
+}
+
+.form__content--dark .form__input:checked:disabled+.form__input-checkbox {
+  outline: 1px solid variables.$accent-color;
+  background-color: rgba(variables.$accent-color, 60%);
+}
+
+.form__content--dark .form__action {
+  color: variables.$accent-color;
+  border-color: variables.$accent-color;
+  text-align: center;
+
+  &:before {
+    background-color: variables.$accent-color;
+    width: 46px;
+    height: 46px;
+  }
+
+  &:after {
+    background-color: variables.$primary-color;
+    right: 20px;
+  }
+
+  &:hover {
+    color: variables.$primary-color;
+    border-color: variables.$accent-color;
+    background-color: variables.$accent-color;
+  }
+
+  &:hover:before {
+    background-color: variables.$primary-color;
+  }
+
+  &:hover:after {
+    background-color: variables.$accent-color;
+  }
+
+  &:active {
+    color: rgba(variables.$primary-color, 70%);
+  }
+
+  &:focus {
+    color: variables.$accent-color;
+    border-color: variables.$accent-color;
   }
 }

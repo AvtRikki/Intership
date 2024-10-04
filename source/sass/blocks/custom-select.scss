@@ -19,13 +19,6 @@
 .custom-select--selected:after {
   position: absolute;
   content: "";
-  //top: 14px;
-  //right: 10px;
-  //width: 0;
-  //height: 0;
-  //border: 6px solid transparent;
-  //border-color: #fff transparent transparent transparent;
-
   mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iOSIgdmlld0JveD0iMCAwIDE2IDkiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xNS4yNzMgMS4wOTA4Mkw4LjAwMDI3IDcuNjM2MjhMMC43Mjc1MzkgMS4wOTA4MiIgc3Ryb2tlPSJ3aGl0ZSIvPgo8L3N2Zz4K");
   mask-repeat: no-repeat;
   background-color: variables.$accent-color;
@@ -75,8 +68,11 @@
   display: none;
 }
 
-.custom-select__items div:hover p,
-.custom-select__items div:hover,
+.custom-select__items div:not(.custom-select--same-as-selected):hover p {
+  color: variables.$primary-color;
+}
+
+.custom-select__items div:focus p,
 .custom-select--same-as-selected {
   color: variables.$accent-color;
   background-color: variables.$primary-color;
