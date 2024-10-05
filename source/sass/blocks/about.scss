@@ -35,7 +35,6 @@
 
   @include mixins.tablet {
     margin-top: -1px;
-
   }
 
   @include mixins.desktop {
@@ -56,20 +55,17 @@
     gap: 13px;
 
     & p {
-      @include mixins.font-info(16px, 22px)
-    }
+      @include mixins.font-info(16px, 22px); }
   }
 
   @include mixins.tablet {
     & p {
-      @include mixins.font-info(20px, 26px)
-    }
+      @include mixins.font-info(20px, 26px); }
   }
 
   @include mixins.desktop {
     & p {
-      @include mixins.font-info(16px, 26px)
-    }
+      @include mixins.font-info(16px, 26px); }
   }
 }
 
@@ -82,12 +78,10 @@
   }
 
   @include mixins.tablet {
-    @include mixins.font-info(34px, 50px)
-  }
+    @include mixins.font-info(34px, 50px); }
 
   @include mixins.desktop {
-    @include mixins.font-info(50px, 50px)
-  }
+    @include mixins.font-info(50px, 50px); }
 }
 
 .about__info {
@@ -107,36 +101,30 @@
     gap: 20px;
 
     & h3 {
-      @include mixins.font-info(18px, 22px)
-    }
+      @include mixins.font-info(18px, 22px); }
 
     & p {
-      @include mixins.font-info(14px, 20px)
-    }
+      @include mixins.font-info(14px, 20px); }
   }
 
   @include mixins.tablet {
     gap: 30px;
 
     & h3 {
-      @include mixins.font-info(28px, 28px)
-    }
+      @include mixins.font-info(28px, 28px); }
 
     & p {
-      @include mixins.font-info(16px, 20px)
-    }
+      @include mixins.font-info(16px, 20px); }
   }
 
   @include mixins.desktop {
     gap: 40px;
 
     & h3 {
-      @include mixins.font-info(32px, 36px)
-    }
+      @include mixins.font-info(32px, 36px); }
 
     & p {
-      @include mixins.font-info(16px, 26px)
-    }
+      @include mixins.font-info(16px, 26px); }
   }
 }
 

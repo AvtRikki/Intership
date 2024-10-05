@@ -47,7 +47,7 @@
   color: variables.$primary-color;
   z-index: 2;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     background-color: variables.$primary-color;
@@ -60,7 +60,7 @@
     transform: translateY(-50%);
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     background-color: variables.$accent-color;
@@ -109,11 +109,11 @@
     color: variables.$accent-color;
   }
 
-  & .header__menu-button:before {
+  & .header__menu-button::before {
     background-color: variables.$accent-color;
   }
 
-  & .header__menu-button:after {
+  & .header__menu-button::after {
     mask-image: url("/__spritemap#sprite-cross-view");
     width: 16px;
     height: 16px;

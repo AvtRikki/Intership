@@ -148,12 +148,12 @@
   cursor: pointer;
 }
 
-.form__input:user-invalid+.form__input-checkbox {
+.form__input:user-invalid + .form__input-checkbox {
   outline: 1px solid variables.$state-color-error;
   background-color: rgba(variables.$state-color-error, 20%);
 }
 
-.form__input:disabled+.form__input-checkbox {
+.form__input:disabled + .form__input-checkbox {
   outline: 1px solid variables.$state-color-disabled;
   background-color: variables.$state-color-disabled;
 }
@@ -262,21 +262,21 @@
   }
 }
 
-.form__content--dark .form__input+.form__input-checkbox {
+.form__content--dark .form__input + .form__input-checkbox {
   outline: 1px solid rgba(variables.$accent-color, 70%);
   background-color: variables.$transparent-color;
 }
 
-.form__content--dark .form__input:hover+.form__input-checkbox {
+.form__content--dark .form__input:hover + .form__input-checkbox {
   outline: 1px solid variables.$accent-color;
   background-color: variables.$transparent-color;
 }
 
-.form__content--dark .form__input:checked+.form__input-checkbox {
+.form__content--dark .form__input:checked + .form__input-checkbox {
   outline: 1px solid variables.$accent-color;
   background-color: variables.$accent-color;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDMuOTQ3MzcgOEw5IDIiIHN0cm9rZT0icmVkIi8+Cjwvc3ZnPgo=");
@@ -290,15 +290,15 @@
   }
 }
 
-.form__content--dark .form__input:checked:hover+.form__input-checkbox {
+.form__content--dark .form__input:checked:hover + .form__input-checkbox {
   background-color: variables.$transparent-color;
 
-  &:before {
+  &::before {
     background-color: variables.$accent-color;
   }
 }
 
-.form__content--dark .form__input:checked:disabled+.form__input-checkbox {
+.form__content--dark .form__input:checked:disabled + .form__input-checkbox {
   outline: 1px solid variables.$accent-color;
   background-color: rgba(variables.$accent-color, 60%);
 }
@@ -308,13 +308,13 @@
   border-color: variables.$accent-color;
   text-align: center;
 
-  &:before {
+  &::before {
     background-color: variables.$accent-color;
     width: 46px;
     height: 46px;
   }
 
-  &:after {
+  &::after {
     background-color: variables.$primary-color;
     right: 20px;
   }
@@ -330,11 +330,11 @@
     background-color: variables.$accent-color;
   }
 
-  &:hover:before {
+  &:hover::before {
     background-color: variables.$primary-color;
   }
 
-  &:hover:after {
+  &:hover::after {
     background-color: variables.$accent-color;
   }
 
@@ -344,11 +344,11 @@
     background-color: variables.$accent-color;
   }
 
-  &:active:before {
+  &:active::before {
     background-color: variables.$primary-color;
   }
 
-  &:active:after {
+  &:active::after {
     background-color: variables.$accent-color;
   }
 }
@@ -391,6 +391,7 @@
 
   @include mixins.mobile {
     @include mixins.font-info(18px, 22px);
+
     margin-bottom: 6px;
     line-height: 22px;
   }
@@ -460,21 +461,21 @@
   }
 }
 
-.form__content--light .form__input+.form__input-checkbox {
+.form__content--light .form__input + .form__input-checkbox {
   outline: 1px solid rgba(variables.$text-color, 70%);
   background-color: variables.$transparent-color;
 }
 
-.form__content--light .form__input:hover+.form__input-checkbox {
+.form__content--light .form__input:hover + .form__input-checkbox {
   outline: 1px solid variables.$text-color;
   background-color: variables.$transparent-color;
 }
 
-.form__content--light .form__input:checked+.form__input-checkbox {
+.form__content--light .form__input:checked + .form__input-checkbox {
   outline: 1px solid variables.$text-color;
   background-color: variables.$transparent-color;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHZpZXdCb3g9IjAgMCAxMCAxMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEgNC41TDMuOTQ3MzcgOEw5IDIiIHN0cm9rZT0icmVkIi8+Cjwvc3ZnPgo=");
@@ -488,16 +489,16 @@
   }
 }
 
-.form__content--light .form__input:checked:hover+.form__input-checkbox {
+.form__content--light .form__input:checked:hover + .form__input-checkbox {
   background-color: variables.$transparent-color;
   outline: 1px solid variables.$text-color;
 
-  &:before {
+  &::before {
     background-color: variables.$text-color;
   }
 }
 
-.form__content--light .form__input:checked:disabled+.form__input-checkbox {
+.form__content--light .form__input:checked:disabled + .form__input-checkbox {
   outline: 1px solid variables.$text-color;
   background-color: rgba(variables.$text-color, 60%);
 }
@@ -508,13 +509,13 @@
   border-color: variables.$primary-color;
   text-align: center;
 
-  &:before {
+  &::before {
     background-color: variables.$primary-color;
     width: 46px;
     height: 46px;
   }
 
-  &:after {
+  &::after {
     background-color: variables.$accent-color;
     right: 20px;
   }
@@ -530,11 +531,11 @@
     background-color: variables.$primary-color;
   }
 
-  &:hover:before {
+  &:hover::before {
     background-color: variables.$accent-color;
   }
 
-  &:hover:after {
+  &:hover::after {
     background-color: variables.$primary-color;
   }
 
@@ -544,11 +545,11 @@
     background-color: variables.$primary-color;
   }
 
-  &:active:before {
+  &:active::before {
     background-color: variables.$accent-color;
   }
 
-  &:active:after {
+  &:active::after {
     background-color: variables.$primary-color;
   }
 }

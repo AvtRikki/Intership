@@ -370,17 +370,17 @@
             </div>
             <div class="grant__info">
               <h3 class="grant__info-title">Чтобы получить грант на&nbsp;обучение, вам нужно:</h3>
-              <ul class="grant_requirements-list">
-                <li class="grant_requirements-item">
+              <ul class="grant__requirements-list">
+                <li class="grant__requirements-item">
                   <p>Быть в возрасте от 16 до 30 лет</p>
                 </li>
-                <li class="grant_requirements-item">
+                <li class="grant__requirements-item">
                   <p>Иметь оконченное среднее образование</p>
                 </li>
-                <li class="grant_requirements-item">
+                <li class="grant__requirements-item">
                   <p>Иметь документально подтверждённое отсутствие судимости и пройти консульскую проверку</p>
                 </li>
-                <li class="grant_requirements-item">
+                <li class="grant__requirements-item">
                   <p>За последние 2 года быть не&nbsp;больше 3х месяцев подряд непрерывно в одной стране</p>
                 </li>
               </ul>
@@ -392,19 +392,19 @@
           <div class="news__filter-container">
             <ul class="news__filter">
               <li class="news__filter-item news__filter-item--active">
-                <button class="news__filter-button news__filter-button--active">Общее</button>
+                <button class="news__filter-button news__filter-button--active" type="button">Общее</button>
               </li>
               <li class="news__filter-item">
-                <button class="news__filter-button">Волонтёрство</button>
+                <button class="news__filter-button" type="button">Волонтёрство</button>
               </li>
               <li class="news__filter-item">
-                <button class="news__filter-button">Стажировки</button>
+                <button class="news__filter-button" type="button">Стажировки</button>
               </li>
               <li class="news__filter-item">
-                <button class="news__filter-button">Карьера</button>
+                <button class="news__filter-button" type="button">Карьера</button>
               </li>
               <li class="news__filter-item">
-                <button class="news__filter-button">Путешествия</button>
+                <button class="news__filter-button" type="button">Путешествия</button>
               </li>
             </ul>
           </div>
@@ -903,13 +903,12 @@
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="message">Ваше сообщение</label>
-                  <textarea class="form__input form__input--text-area" type="text" name="message" id="message" required></textarea>
+                  <textarea class="form__input form__input--text-area" name="message" id="message" required></textarea>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="city">Выберите город</label>
                   <div class="form__input form__input-drop-down custom-select" tabindex="0">
                     <select name="city" id="city">
-                      <option value="empty"></option>
                       <option value="kulebaki">Кулебаки</option>
                       <option value="murom">Муром</option>
                       <option value="arzamas">Арзамас</option>
@@ -917,7 +916,7 @@
                   </div>
                 </div>
                 <div class="form__input-wrapper">
-                  <label class="form__label" for="signature">
+                  <label class="form__label">
                     <input class="form__input visually-hidden" type="checkbox" name="signature" id="signature" required>
                     <span class="form__input-checkbox"></span>
                     <span class="form__label-text">Я согласен на обработку моих персональных данных</span>
@@ -1043,13 +1042,12 @@
             </div>
             <div class="form__input-wrapper form__input-wrapper--extra">
               <label class="form__label" for="modal-message">Ваше сообщение</label>
-              <textarea class="form__input form__input--text-area" type="text" name="message" id="modal-message" required></textarea>
+              <textarea class="form__input form__input--text-area" name="message" id="modal-message" required></textarea>
             </div>
             <div class="form__input-wrapper">
               <label class="form__label" for="modal-city">Выберите город</label>
               <div class="form__input form__input-drop-down custom-select" tabindex="0">
                 <select name="city" id="modal-city">
-                  <option value="empty"></option>
                   <option value="kulebaki">Кулебаки</option>
                   <option value="murom">Муром</option>
                   <option value="arzamas">Арзамас</option>
@@ -1057,7 +1055,7 @@
               </div>
             </div>
             <div class="form__input-wrapper">
-              <label class="form__label" for="modal-signature">
+              <label class="form__label">
                 <input class="form__input visually-hidden" type="checkbox" name="signature" id="modal-signature" required>
                 <span class="form__input-checkbox"></span>
                 <span class="form__label-text">Я согласен на обработку моих персональных данных</span>

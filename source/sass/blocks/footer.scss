@@ -63,7 +63,7 @@
 }
 
 .footer__nav-items {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   display: flex;
   flex-direction: row;
@@ -130,7 +130,7 @@
 }
 
 .footer__socials {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   display: flex;
   flex-wrap: wrap;

@@ -26,9 +26,10 @@
   @include mixins.mobile {
     @include mixins.font-info(20px, 20px);
 
-    margin-bottom: 25px;
+    margin-bottom: 23px;
     padding-top: 8px;
     padding-right: 15px;
+    margin-left: 15px;
   }
 
   @include mixins.tablet {
@@ -50,7 +51,7 @@
   overflow-x: auto;
 
   @include mixins.mobile {
-    margin: 0 0 17px;
+    margin: 0 0 23px;
   }
 
   @include mixins.tablet {
@@ -63,7 +64,7 @@
 }
 
 .news__filter {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   display: flex;
   align-items: center;
@@ -129,7 +130,7 @@
 
   @include mixins.mobile {
     margin-left: 1px;
-    padding: 9px 13px 6px 14px;
+    padding: 14px 15px 9px 14px;
   }
 
   @include mixins.tablet {
@@ -157,7 +158,7 @@
 }
 
 .news__slider .news__items {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   @include mixins.mobile {
     height: 590px;
@@ -293,10 +294,10 @@
     background-color: variables.$alternative-color;
   }
 
- @include mixins.mobile {
-   max-width: 279px;
-   max-height: 330px;
- }
+  @include mixins.mobile {
+    max-width: 279px;
+    max-height: 330px;
+  }
 
   @include mixins.tablet {
     max-width: 256px;
@@ -385,6 +386,12 @@
 
     max-width: 214px;
     padding: 5px 10px 0 0;
+  }
+}
+
+.news__item--active .news__content-time {
+  @include mixins.mobile {
+    padding: 13px 12px 11px 0;
   }
 }
 
@@ -479,7 +486,6 @@
   display: flex;
   justify-content: space-between;
   max-height: 31px;
-  padding-right: 15px;
 }
 
 .news__pagination-prev,

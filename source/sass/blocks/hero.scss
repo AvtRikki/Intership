@@ -12,7 +12,7 @@
 }
 
 .hero__items {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   & .hero__item {
     display: flex;

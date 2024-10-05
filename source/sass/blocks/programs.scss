@@ -87,7 +87,7 @@
 }
 
 .programs__items {
-  @include mixins.list-base();
+  @include mixins.list-base;
 
   & .programs__item {
     display: flex;
@@ -217,8 +217,7 @@
     min-height: 69px;
 
     & p {
-      @include mixins.font-info(12px, 14px)
-    }
+      @include mixins.font-info(12px, 14px); }
   }
 
   @include mixins.tablet {
@@ -226,8 +225,7 @@
     min-height: 77px;
 
     & p {
-      @include mixins.font-info(14px, 20px)
-    }
+      @include mixins.font-info(14px, 20px); }
   }
 
   @include mixins.desktop {
@@ -235,19 +233,18 @@
     min-height: 79px;
 
     & p {
-      @include mixins.font-info(14px, 18px)
-    }
+      @include mixins.font-info(14px, 18px); }
   }
 }
 
 .programs__info-action {
-  &:before {
+  &::before {
     width: 30px;
     height: 30px;
     right: 0;
   }
 
-  &:after {
+  &::after {
     right: 8px;
   }
 }

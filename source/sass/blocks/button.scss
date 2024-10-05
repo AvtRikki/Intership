@@ -40,7 +40,7 @@
     padding-right: 55px;
   }
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     background-color: variables.$primary-color;
@@ -52,7 +52,7 @@
     transform: translateY(-50%);
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     background-color: variables.$accent-color;
@@ -139,7 +139,7 @@
   height: 22px;
   border-radius: 50%;
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     background-color: variables.$primary-color;
@@ -149,7 +149,7 @@
     height: 10px;
   }
 
-  &:hover:after {
+  &:hover::after {
     opacity: 70%;
   }
 
@@ -161,24 +161,24 @@
     background-color: variables.$accent-color;
   }
 
-  &:active:after {
+  &:active::after {
     opacity: 70%;
   }
 
-  &:disabled:after {
+  &:disabled::after {
     background-color: variables.$state-color-disabled;
   }
 }
 
 .button--arrow-prev {
-  &:after {
+  &::after {
     transform: rotate(180deg);
     left: 6px;
   }
 }
 
 .button--arrow-next {
-  &:after {
+  &::after {
     right: 6px;
   }
 }

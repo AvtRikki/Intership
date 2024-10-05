@@ -151,8 +151,8 @@
   }
 }
 
-.grant_requirements-list {
-  @include mixins.list-base();
+.grant__requirements-list {
+  @include mixins.list-base;
 
   padding: 0 0 0 20px;
   counter-reset: steps;
@@ -178,7 +178,7 @@
   }
 }
 
-.grant_requirements-item {
+.grant__requirements-item {
   position: relative;
   border: 1px solid variables.$alternative-color;
   border-radius: 16px;

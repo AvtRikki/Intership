@@ -33,16 +33,13 @@
   color: variables.$primary-color;
 
   @include mixins.mobile {
-    @include mixins.font-info(14px, 18px)
-  }
+    @include mixins.font-info(14px, 18px); }
 
   @include mixins.tablet {
-    @include mixins.font-info(20px, 24px)
-  }
+    @include mixins.font-info(20px, 24px); }
 
   @include mixins.desktop {
-    @include mixins.font-info(18px, 24px)
-  }
+    @include mixins.font-info(18px, 24px); }
 }
 
 .review-card__header-wrapper {
