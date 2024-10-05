@@ -36,7 +36,7 @@ export class CustomSelect {
     const itemsDiv = document.createElement('div');
     itemsDiv.setAttribute('class', 'custom-select__items custom-select--hide');
 
-    for (let j = 1; j < element.length; j++) {
+    for (let j = 0; j < element.length; j++) {
       const optionDiv = document.createElement('div');
       const content = document.createElement('p');
       content.textContent = element.options[j].innerText;

@@ -893,11 +893,13 @@
               <form class="form__contacts" id="contacts-form" action="https://echo.htmlacademy.ru/" method="post">
                 <div class="form__input-wrapper">
                   <label class="form__label" for="name">Имя</label>
-                  <input class="form__input form__input--text" type="text" name="name" id="name" required>
+                  <input class="form__input form__input--text" type="text" name="name" id="name"
+                         minlength="2" maxlength="40" title="От 2 символов. Разрешены буквы и пробелы." pattern="^[a-zA-Zа-яА-ЯёЁ\s]{2,}$">
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="phone">Телефон</label>
-                  <input class="form__input form__input--text" type="text" name="phone" id="phone" required>
+                  <input class="form__input form__input--text form__input--phone" type="text" name="phone" id="phone"
+                         minlength="11" title="От 7 символов. Пример: +7 (___) ___-__-__." required>
                 </div>
                 <div class="form__input-wrapper">
                   <label class="form__label" for="message">Ваше сообщение</label>
@@ -1016,6 +1018,58 @@
           </div>
         </div>
       </footer>
+    </div>
+    <div class="modal">
+      <div class="modal__wrapper">
+        <div class="modal__overlay"></div>
+        <div class="modal__form form">
+          <div class="form__content form__content--light">
+          <button class="modal__close" type="button">
+            <span class="visually-hidden">Закрыть</span>
+            <svg width="18" height="18" viewBox="0 0 18 18" role="img" aria-hidden="true" focusable="true">
+              <use href="/__spritemap#sprite-cross"></use>
+            </svg>
+          </button>
+          <h2 class="form__title">Напишите нам</h2>
+          <p class="form__description">Оставьте ваши контакты, если остались вопросы мы на них ответим!</p>
+          <form class="form__contacts" id="modal-form" action="https://echo.htmlacademy.ru/" method="post">
+            <div class="form__input-wrapper">
+              <label class="form__label" for="modal-name">Имя</label>
+              <input class="form__input form__input--text" type="text" name="name" id="modal-name" required>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="modal-phone">Телефон</label>
+              <input class="form__input form__input--text form__input--phone" type="text" name="phone" id="modal-phone" required>
+            </div>
+            <div class="form__input-wrapper form__input-wrapper--extra">
+              <label class="form__label" for="modal-message">Ваше сообщение</label>
+              <textarea class="form__input form__input--text-area" type="text" name="message" id="modal-message" required></textarea>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="modal-city">Выберите город</label>
+              <div class="form__input form__input-drop-down custom-select" tabindex="0">
+                <select name="city" id="modal-city">
+                  <option value="empty"></option>
+                  <option value="kulebaki">Кулебаки</option>
+                  <option value="murom">Муром</option>
+                  <option value="arzamas">Арзамас</option>
+                </select>
+              </div>
+            </div>
+            <div class="form__input-wrapper">
+              <label class="form__label" for="modal-signature">
+                <input class="form__input visually-hidden" type="checkbox" name="signature" id="modal-signature" required>
+                <span class="form__input-checkbox"></span>
+                <span class="form__label-text">Я согласен на обработку моих персональных данных</span>
+              </label>
+            </div>
+            <button class="form__action button button--secondary" type="submit">
+              <span>Отправить</span>
+            </button>
+          </form>
+        </div>
+        </div>
+      </div>
     </div>
     <script type="module" src="js/main.js"></script>
   </body>
