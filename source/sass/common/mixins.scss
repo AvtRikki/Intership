@@ -10,6 +10,12 @@
   }
 }
 
+@mixin tablet-only {
+  @media (min-width: variables.$view-port-tablet) and (max-width: variables.$view-port-desktop - 1px) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media (min-width: variables.$view-port-desktop) {
     @content;

@@ -34,7 +34,7 @@
   @include mixins.tablet {
     @include mixins.font-info(34px, 50px);
 
-    margin-bottom: 29px;
+    margin-bottom: 41px;
     padding-top: 0;
   }
 
@@ -116,6 +116,31 @@
     @include mixins.font-info(28px, 34px);
 
     max-width: 790px;
+  }
+}
+
+.faq__sub-title--short {
+  @include mixins.tablet {
+
+    & h3 {
+      padding-right: 126px;
+    }
+
+    & .faq__action {
+      margin-top: -10px;
+    }
+  }
+
+  @include mixins.desktop {
+    padding-right: 0;
+
+    & h3 {
+      padding-right: 0;
+    }
+
+    & .faq__action {
+      margin-top: 0;
+    }
   }
 }
 
@@ -241,8 +266,8 @@
   @include mixins.tablet {
     @include mixins.font-info(16px, 20px);
 
-    margin-top: 16px;
-    padding-right: 36px;
+    margin-top: 20px;
+    padding-right: 25px;
   }
 
   @include mixins.desktop {

@@ -55,7 +55,7 @@
   }
 
   @include mixins.tablet {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
   }
 
   @include mixins.desktop {
@@ -106,12 +106,12 @@
   @include mixins.tablet {
     @include mixins.font-info(14px, 14px, 500);
 
-    padding: 14px 20px;
+    min-height: 46px;
+    padding: 14px 19px;
     letter-spacing: 0.28px;
   }
 
   @include mixins.desktop {
-    min-height: 46px;
     min-width: 120px;
     padding: 14px 12px;
   }
@@ -137,10 +137,14 @@
 
   @include mixins.tablet {
     padding: 11px 19px;
+
+    min-width: 93px;
+    margin-top: 2px;
   }
 
   @include mixins.desktop {
     padding: 11px 25px;
+    margin-top: 0;
   }
 }
 
@@ -351,10 +355,11 @@
 
   @include mixins.tablet {
     max-width: 175px;
+    padding: 14px 12px 4px 0;
   }
 
   @include mixins.desktop {
-    padding-top: 14px;
+    padding: 14px 12px 4px 0;
     max-width: 182px;
   }
 }
@@ -390,7 +395,7 @@
     @include mixins.font-info(20px, 24px);
 
     max-width: 207px;
-    padding: 5px 10px 1px 0;
+    padding: 11px 10px 6px 0;
   }
 
   @include mixins.desktop {
@@ -415,7 +420,7 @@
   }
 
   @include mixins.tablet {
-    padding: 13px 18px 2px 0;
+    padding: 10px 18px 9px 0;
   }
 
   @include mixins.desktop {
@@ -449,7 +454,7 @@
   }
 
   @include mixins.tablet {
-    padding: 7px 18px 10px 0;
+    padding: 9px 13px 15px 0;
     gap: 16px;
   }
 
@@ -493,6 +498,17 @@
 
 .news__content .news__action {
   align-self: center;
+}
+
+.news__action {
+  &:before {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:after {
+    right: 12px;
+  }
 }
 
 .news__pagination {
@@ -568,4 +584,21 @@
   color: variables.$accent-color;
   background-color: variables.$primary-color;
   border-color: variables.$primary-color;
+}
+
+@include mixins.tablet-only {
+  .news__content-wrapper--offer {
+    & .news__content-title {
+      margin: -2px 0 0 0px;
+      padding: 11px 10px 9px 0;
+    }
+  }
+
+  .news__content-wrapper--volonteer,
+  .news__content-wrapper--travel {
+
+    & .news__content {
+      padding: 12px 13px 11px 0;
+    }
+  }
 }

@@ -154,6 +154,7 @@ export class SwiperInitializer {
           grid: {
             rows: 2,
             columns: 'auto',
+            fill: 'row'
           },
         },
         1440: {
