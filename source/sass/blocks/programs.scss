@@ -14,7 +14,7 @@
   }
 
   @include mixins.desktop {
-    padding-top: 60px;
+    padding-top: 65px;
     padding-bottom: 60px;
   }
 }
@@ -30,6 +30,11 @@
 
   @include mixins.tablet {
     grid-template-columns: auto auto 54px;
+  }
+
+  @include mixins.desktop {
+    max-width: 1240px;
+    overflow-x: hidden;
   }
 }
 
@@ -65,6 +70,21 @@
     grid-column: 2/4;
     justify-self: end;
   }
+
+  @include mixins.desktop {
+    min-height: 58px;
+    min-width: 233px;
+    margin-bottom: -4px;
+
+    &:before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &:after {
+      right: 20px;
+    }
+  }
 }
 
 .programs__slider {
@@ -82,7 +102,7 @@
   }
 
   @include mixins.desktop {
-    margin-top: 46px;
+    margin-top: 41px;
   }
 }
 

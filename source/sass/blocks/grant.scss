@@ -35,7 +35,7 @@
 
   @include mixins.desktop {
     display: grid;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 498px 498px;
     gap: 138px;
   }
 }
@@ -88,7 +88,7 @@
   }
 
   @include mixins.desktop {
-    margin-top: 4px;
+    margin-top: 12px;
   }
 }
 
@@ -130,7 +130,7 @@
   }
 
   @include mixins.desktop {
-    margin-top: 4px;
+    margin-top: 10px;
     gap: 55px;
   }
 }
@@ -237,7 +237,7 @@
   }
 
   @include mixins.desktop {
-    padding: 22px 60px 22px 23px;
+    padding: 30px 60px 30px 23px;
 
     & p {
       @include mixins.font-info(16px, 26px);
