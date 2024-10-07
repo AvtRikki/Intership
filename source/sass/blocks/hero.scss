@@ -146,6 +146,7 @@
 .hero__container {
   display: flex;
   flex-direction: column;
+  margin-left: 0;
 }
 
 .hero__title {
@@ -173,7 +174,7 @@
     @include mixins.font-info(54px, 62px);
 
     max-width: 968px;
-    padding: 40px 138px 30px 50px;
+    padding: 40px 93px 30px 50px;
   }
 }
 
@@ -225,13 +226,14 @@
 
   @include mixins.desktop {
     align-items: center;
-    padding: 0 50px 28px;
+    padding: 0 50px 35px;
     min-width: 772px;
     max-width: 772px;
-    margin-top: -7px;
+    margin-top: 0;
+    gap: 56px;
 
     &::after {
-      top: 7px;
+      top: 0;
     }
   }
 }
@@ -268,6 +270,8 @@
 
   @include mixins.desktop {
     @include mixins.font-info(16px, 26px);
+
+    max-width: 400px;
   }
 }
 
@@ -308,5 +312,18 @@
 
   @include mixins.desktop {
     margin-top: 0;
+
+    margin-right: -20px;
+    min-height: 58px;
+    min-width: 200px;
+
+    &:before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &:after {
+      right: 20px;
+    }
   }
 }

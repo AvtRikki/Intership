@@ -80,7 +80,7 @@
     }
 
     & p {
-      @include mixins.font-info(14px, 20px);
+      @include mixins.font-info(14px, 20px, 300);
     }
   }
 
@@ -103,8 +103,11 @@
   }
 
   @include mixins.desktop {
-    padding: 25px 60px 25px 59px;
+    display: grid;
+    gap: 30px;
+    padding: 30px 60px 20px 40px;
     grid-template-columns: auto auto;
+    min-height: 162px;
 
     & h3 {
       @include mixins.font-info(26px, 30px);
@@ -112,6 +115,93 @@
       letter-spacing: 0.26px;
       padding-top: 4px;
       max-width: 171px;
+    }
+  }
+}
+
+.benefits__item--first {
+  @include mixins.mobile {
+    gap: 0;
+  }
+
+  @include mixins.tablet {
+    gap: 7px;
+  }
+
+  @include mixins.desktop {
+    gap: 29px;
+
+    & h3 {
+      margin-top: 16px;
+    }
+
+    & p {
+      margin-top: 20px;
+    }
+  }
+}
+
+.benefits__item--second {
+  @include mixins.mobile {
+    gap: 4px;
+    padding-bottom: 23px;
+  }
+
+  @include mixins.tablet {
+    gap: 7px;
+    padding-bottom: 23px;
+  }
+
+  @include mixins.desktop {
+    gap: 30px;
+
+    & h3 {
+      margin-top: 16px;
+    }
+  }
+}
+
+.benefits__item--third {
+  @include mixins.mobile {
+    gap: 0;
+  }
+
+  @include mixins.tablet {
+    gap: 7px;
+    padding-right: 16px;
+  }
+
+  @include mixins.desktop {
+    gap: 30px;
+    min-height: 142px;
+
+    & h3 {
+      margin-top: 6px;
+    }
+  }
+}
+
+.benefits__item--forth {
+  @include mixins.mobile {
+    gap: 0;
+  }
+
+  @include mixins.tablet {
+    gap: 7px;
+  }
+
+  @include mixins.desktop {
+    gap: 20px;
+    padding-right: 40px;
+    min-height: 142px;
+
+    & h3 {
+      margin-top: 6px;
+    }
+
+    & p {
+      margin-top: 10px;
+      max-width: 190px;
     }
   }
 }
