@@ -35,7 +35,7 @@
   @include mixins.tablet {
     grid-template-columns: 58px 1fr auto;
     grid-template-rows: auto auto;
-    row-gap: 25px;
+    row-gap: 26px;
   }
 }
 
@@ -154,11 +154,13 @@
     grid-column: 3/4;
     grid-row: 2/3;
     justify-self: flex-end;
+    margin-top: -3px;
   }
 
   @include mixins.desktop {
     gap: 20px;
     grid-row: unset;
+    margin-top: 0;
   }
 }
 
@@ -276,7 +278,7 @@
   }
 
   @include mixins.tablet {
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
   }
 
   @include mixins.desktop {
