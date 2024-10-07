@@ -501,12 +501,12 @@
 }
 
 .news__action {
-  &:before {
+  &::before {
     width: 30px;
     height: 30px;
   }
 
-  &:after {
+  &::after {
     right: 12px;
   }
 }
@@ -589,14 +589,13 @@
 @include mixins.tablet-only {
   .news__content-wrapper--offer {
     & .news__content-title {
-      margin: -2px 0 0 0px;
+      margin: -2px 0 0;
       padding: 11px 10px 9px 0;
     }
   }
 
   .news__content-wrapper--volonteer,
   .news__content-wrapper--travel {
-
     & .news__content {
       padding: 12px 13px 11px 0;
     }

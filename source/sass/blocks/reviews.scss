@@ -79,10 +79,10 @@
 
 .reviews__items {
   @include mixins.list-base;
+}
 
-  & .reviews__item {
-    display: flex;
-  }
+.reviews__items .reviews__item {
+  display: flex;
 }
 
 .reviews__item {
@@ -97,7 +97,7 @@
 
   @include mixins.tablet {
     max-width: 560px;
-    padding: 48px 49px 50px 49px;
+    padding: 48px 49px 50px;
     border: 2px solid variables.$primary-color;
   }
 

@@ -266,6 +266,7 @@
 
   @include mixins.tablet {
     @include mixins.font-info(16px, 20px);
+
     max-width: 280px;
   }
 
@@ -311,12 +312,12 @@
     min-height: 56px;
     min-width: 198px;
 
-    &:before {
+    &::before {
       width: 46px;
       height: 46px;
     }
 
-    &:after {
+    &::after {
       right: 20px;
     }
   }
@@ -328,12 +329,12 @@
     min-height: 58px;
     min-width: 200px;
 
-    &:before {
+    &::before {
       width: 46px;
       height: 46px;
     }
 
-    &:after {
+    &::after {
       right: 20px;
     }
   }

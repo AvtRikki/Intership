@@ -75,7 +75,7 @@
 
   @include mixins.tablet {
     border-radius: 16px;
-    padding: 30px 30px;
+    padding: 30px;
   }
 
   @include mixins.desktop {
@@ -125,7 +125,6 @@
 
 .faq__sub-title--short {
   @include mixins.tablet {
-
     & h3 {
       padding-right: 126px;
     }

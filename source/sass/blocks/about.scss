@@ -55,7 +55,8 @@
     gap: 14px;
 
     & p {
-      @include mixins.font-info(16px, 22px); }
+      @include mixins.font-info(16px, 22px);
+    }
   }
 
   @include mixins.tablet {
@@ -72,7 +73,8 @@
     gap: 30px;
 
     & p {
-      @include mixins.font-info(22px, 32px); }
+      @include mixins.font-info(22px, 32px);
+    }
   }
 }
 
@@ -86,6 +88,7 @@
 
   @include mixins.tablet {
     @include mixins.font-info(34px, 50px);
+
     margin-bottom: 31px;
   }
 
@@ -113,10 +116,12 @@
     gap: 20px;
 
     & h3 {
-      @include mixins.font-info(18px, 22px); }
+      @include mixins.font-info(18px, 22px);
+    }
 
     & p {
-      @include mixins.font-info(14px, 20px); }
+      @include mixins.font-info(14px, 20px);
+    }
   }
 
   @include mixins.tablet {
@@ -124,20 +129,24 @@
     max-width: 498px;
 
     & h3 {
-      @include mixins.font-info(28px, 28px); }
+      @include mixins.font-info(28px, 28px);
+    }
 
     & p {
-      @include mixins.font-info(16px, 20px); }
+      @include mixins.font-info(16px, 20px);
+    }
   }
 
   @include mixins.desktop {
     gap: 40px;
 
     & h3 {
-      @include mixins.font-info(32px, 36px); }
+      @include mixins.font-info(32px, 36px);
+    }
 
     & p {
-      @include mixins.font-info(16px, 26px); }
+      @include mixins.font-info(16px, 26px);
+    }
   }
 }
 
@@ -152,12 +161,12 @@
     min-height: 56px;
     min-width: 279px;
 
-    &:before {
+    &::before {
       width: 46px;
       height: 46px;
     }
 
-    &:after {
+    &::after {
       right: 20px;
     }
   }

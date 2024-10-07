@@ -73,12 +73,12 @@
     min-width: 233px;
     margin-right: 45px;
 
-    &:before {
+    &::before {
       width: 46px;
       height: 46px;
     }
 
-    &:after {
+    &::after {
       right: 20px;
     }
   }
@@ -135,7 +135,7 @@
   @include mixins.tablet {
     max-width: 324px;
     min-height: 420px;
-    padding: 20px 20px 11px 20px;
+    padding: 20px 20px 11px;
   }
 
   @include mixins.desktop {
@@ -240,7 +240,8 @@
     min-height: 69px;
 
     & p {
-      @include mixins.font-info(12px, 14px); }
+      @include mixins.font-info(12px, 14px);
+    }
   }
 
   @include mixins.tablet {
@@ -248,7 +249,8 @@
     min-height: 77px;
 
     & p {
-      @include mixins.font-info(14px, 20px); }
+      @include mixins.font-info(14px, 20px);
+    }
   }
 
   @include mixins.desktop {
@@ -256,7 +258,8 @@
     min-height: 79px;
 
     & p {
-      @include mixins.font-info(14px, 18px); }
+      @include mixins.font-info(14px, 18px);
+    }
   }
 }
 
