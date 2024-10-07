@@ -13,7 +13,7 @@
   }
 
   @include mixins.desktop {
-    padding-top: 60px;
+    padding-top: 65px;
     padding-bottom: 60px;
   }
 }
@@ -29,6 +29,11 @@
 
   @include mixins.tablet {
     grid-template-columns: auto auto 54px;
+  }
+
+  @include mixins.desktop {
+    max-width: 1240px;
+    overflow-x: hidden;
   }
 }
 
@@ -91,7 +96,9 @@
   }
 
   @include mixins.desktop {
-    padding: 49px 51px 43px 49px;
+    min-width: 604px;
+    min-height: 483px;
+    padding: 49px 50px 43px 49px;
   }
 }
 
