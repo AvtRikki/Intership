@@ -123,7 +123,7 @@
 
 .benefits__item--first {
   @include mixins.mobile {
-    gap: 0;
+    gap: 12px;
   }
 
   @include mixins.tablet {
@@ -152,8 +152,8 @@
 
 .benefits__item--second {
   @include mixins.mobile {
-    gap: 4px;
-    padding-bottom: 23px;
+    gap: 15px;
+    padding-bottom: 15px;
   }
 
   @include mixins.tablet {
@@ -172,7 +172,7 @@
 
 .benefits__item--third {
   @include mixins.mobile {
-    gap: 0;
+    gap: 15px;
   }
 
   @include mixins.tablet {
@@ -193,11 +193,19 @@
 
 .benefits__item--forth {
   @include mixins.mobile {
-    gap: 0;
+    gap: 16px;
+
+    & h3 {
+      padding-right: 104px;
+    }
   }
 
   @include mixins.tablet {
     gap: 7px;
+
+    & h3 {
+      padding-right: 0;
+    }
   }
 
   @include mixins.desktop {
