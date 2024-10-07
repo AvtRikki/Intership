@@ -34,7 +34,7 @@
   @include mixins.tablet {
     @include mixins.font-info(34px, 50px);
 
-    margin-bottom: 41px;
+    margin-bottom: 40px;
     padding-top: 0;
   }
 
@@ -54,6 +54,10 @@
   flex-direction: column;
   gap: 12px;
 
+  @include mixins.tablet {
+    gap: 10px;
+  }
+
   @include mixins.desktop {
     gap: 10px;
   }
@@ -71,7 +75,7 @@
 
   @include mixins.tablet {
     border-radius: 16px;
-    padding: 29px 30px;
+    padding: 30px 30px;
   }
 
   @include mixins.desktop {
