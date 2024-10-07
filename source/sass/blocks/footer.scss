@@ -33,7 +33,7 @@
   }
 
   @include mixins.tablet {
-    grid-template-columns: 52px 1fr auto;
+    grid-template-columns: 58px 1fr auto;
     grid-template-rows: auto auto;
     row-gap: 25px;
   }
@@ -57,8 +57,8 @@
   }
 
   @include mixins.tablet {
-    grid-column: 2/-1;
-    grid-row: unset;
+    grid-column: 3/4;
+    grid-row: 1/2;
   }
 
   @include mixins.desktop {
@@ -152,12 +152,13 @@
   @include mixins.tablet {
     gap: 10px;
     grid-column: 3/4;
-    grid-row: 1/2;
+    grid-row: 2/3;
     justify-self: flex-end;
   }
 
   @include mixins.desktop {
     gap: 20px;
+    grid-row: unset;
   }
 }
 
@@ -231,17 +232,17 @@
 
   @include mixins.tablet {
     display: flex;
-    grid-column: 1/3;
+    grid-column: 1/4;
     grid-row: 2/3;
-    gap: 10px;
+    gap: 15px;
     align-items: unset;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column-reverse;
   }
 
   @include mixins.desktop {
     grid-column: 1/-1;
     gap: 20px;
+    flex-direction: row;
   }
 }
 
