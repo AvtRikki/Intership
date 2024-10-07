@@ -14,6 +14,11 @@
     padding-bottom: 50px;
   }
 
+  @include mixins.tablet-only {
+    padding-left: 58px;
+    padding-right: 58px;
+  }
+
   @include mixins.desktop {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -67,7 +72,7 @@
   }
 
   @include mixins.tablet {
-    gap: 17px;
+    gap: 20px;
   }
 
   @include mixins.desktop {
@@ -81,6 +86,10 @@
   position: relative;
   width: 100%;
   gap: 12px;
+
+  @include mixins.tablet-only {
+    gap: 13px;
+  }
 }
 
 .form__label {
@@ -116,7 +125,7 @@
 
 .form__input-drop-down {
   padding: 0;
-  min-height: 48px;
+  min-height: 50px;
 }
 
 .form__input--text {
@@ -138,7 +147,7 @@
   }
 
   @include mixins.tablet {
-    min-height: 96px;
+    min-height: 87px;
   }
 
   @include mixins.desktop {
@@ -151,7 +160,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 8px;
   border-radius: 2px;
   cursor: pointer;
 }
@@ -172,6 +181,17 @@
   width: calc(100% - 10px);
   min-height: 56px;
 
+  @include mixins.tablet {
+    margin-top: 16px;
+  }
+
+  @include mixins.tablet-only {
+    margin-top: 14px;
+    & span {
+      padding-right: 75px;
+    }
+  }
+
   @include mixins.desktop {
     margin-top: 15px;
   }
@@ -186,7 +206,8 @@
   }
 
   @include mixins.tablet {
-    padding: 60px 46px 58px;
+    padding: 42px 41px 36px 40px;
+    max-width: 442px;
   }
 
   @include mixins.desktop {
@@ -208,7 +229,7 @@
   @include mixins.tablet {
     @include mixins.font-info(28px, 28px);
 
-    margin-bottom: 28px;
+    margin-bottom: 31px;
   }
 
   @include mixins.desktop {
@@ -231,7 +252,7 @@
   @include mixins.tablet {
     @include mixins.font-info(16px, 20px);
 
-    margin-bottom: 32px;
+    margin-bottom: 40px;
   }
 
   @include mixins.desktop {
@@ -263,6 +284,17 @@
   }
 }
 
+
+.form__content--dark .form__input-wrapper--signature {
+  @include mixins.tablet {
+    margin-top: 3px;
+  }
+
+  @include mixins.desktop {
+    margin-top: 0;
+  }
+}
+
 .form__content--dark .form__input-wrapper {
   &:focus-within .form__label,
   &:hover .form__label {
@@ -276,7 +308,7 @@
 
 .form__content--dark .form__input + .form__input-checkbox {
   outline: 1px solid rgba(variables.$accent-color, 70%);
-  background-color: variables.$transparent-color;
+  background-color: variables.$accent-color;
 }
 
 .form__content--dark .form__input:hover + .form__input-checkbox {
