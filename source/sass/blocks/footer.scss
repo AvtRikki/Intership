@@ -60,6 +60,10 @@
     grid-column: 2/-1;
     grid-row: unset;
   }
+
+  @include mixins.desktop {
+    grid-column: 2/3;
+  }
 }
 
 .footer__nav-items {
@@ -81,6 +85,7 @@
   }
 
   @include mixins.desktop {
+    justify-content: flex-start;
     gap: 10px;
   }
 }
@@ -147,8 +152,12 @@
   @include mixins.tablet {
     gap: 10px;
     grid-column: 3/4;
-    grid-row: 2/3;
+    grid-row: 1/2;
     justify-self: flex-end;
+  }
+
+  @include mixins.desktop {
+    gap: 20px;
   }
 }
 
@@ -221,11 +230,13 @@
   }
 
   @include mixins.tablet {
+    display: flex;
     grid-column: 1/3;
     grid-row: 2/3;
     gap: 10px;
     align-items: unset;
-    flex-direction: column-reverse;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   @include mixins.desktop {
