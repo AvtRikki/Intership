@@ -92,6 +92,12 @@
   }
 }
 
+.form__input-wrapper--phone {
+  @include mixins.tablet-only {
+    margin-top: 1px;
+  }
+}
+
 .form__label {
   @include mixins.mobile {
     @include mixins.font-info(14px, 14px);
@@ -186,7 +192,8 @@
   }
 
   @include mixins.tablet-only {
-    margin-top: 14px;
+    margin-top: 13px;
+
     & span {
       padding-right: 75px;
     }
