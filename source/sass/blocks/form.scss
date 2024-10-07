@@ -5,18 +5,18 @@
   position: relative;
 
   @include mixins.mobile {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   @include mixins.tablet {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 
   @include mixins.desktop {
-    margin-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 }
 
@@ -68,6 +68,10 @@
 
   @include mixins.tablet {
     gap: 17px;
+  }
+
+  @include mixins.desktop {
+    gap: 20px;
   }
 }
 
@@ -136,6 +140,10 @@
   @include mixins.tablet {
     min-height: 96px;
   }
+
+  @include mixins.desktop {
+    min-height: 87px;
+  }
 }
 
 .form__input-checkbox {
@@ -163,6 +171,10 @@
   justify-content: center;
   width: calc(100% - 10px);
   min-height: 56px;
+
+  @include mixins.desktop {
+    margin-top: 15px;
+  }
 }
 
 .form__content--dark {
@@ -178,8 +190,8 @@
   }
 
   @include mixins.desktop {
-    padding: 82px 75px 41px;
-    max-width: 498px;
+    padding: 44px 70px 40px;
+    max-width: 490px;
   }
 }
 
@@ -202,7 +214,7 @@
   @include mixins.desktop {
     @include mixins.font-info(32px, 36px);
 
-    margin-bottom: 25px;
+    margin-bottom: 33px;
   }
 }
 
@@ -225,7 +237,7 @@
   @include mixins.desktop {
     @include mixins.font-info(16px, 26px);
 
-    margin-bottom: 29px;
+    margin-bottom: 39px;
   }
 }
 
