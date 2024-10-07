@@ -166,7 +166,7 @@
     @include mixins.font-info(36px, 44px);
 
     max-width: 659px;
-    padding: 30px 99px 24px 40px;
+    padding: 31px 59px 23px 40px;
     border-radius: 0 30px 30px 0;
   }
 
@@ -207,7 +207,7 @@
     display: grid;
     grid-template-columns: auto auto;
     align-items: flex-start;
-    padding: 0 40px 35px;
+    padding: 4px 40px 35px;
     gap: 30px;
     background-color: variables.$accent-color;
     border-radius: 0 0 30px 30px;
@@ -266,6 +266,7 @@
 
   @include mixins.tablet {
     @include mixins.font-info(16px, 20px);
+    max-width: 280px;
   }
 
   @include mixins.desktop {
@@ -307,7 +308,17 @@
 
 .hero__action {
   @include mixins.tablet {
-    margin-top: 4px;
+    min-height: 56px;
+    min-width: 198px;
+
+    &:before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &:after {
+      right: 20px;
+    }
   }
 
   @include mixins.desktop {
