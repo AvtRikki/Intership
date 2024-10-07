@@ -13,7 +13,7 @@
   }
 
   @include mixins.desktop {
-    padding-top: 60px;
+    padding-top: 56px;
     padding-bottom: 60px;
   }
 }
@@ -42,7 +42,7 @@
   @include mixins.desktop {
     @include mixins.font-info(50px, 50px);
 
-    margin-bottom: 44px;
+    margin-bottom: 40px;
     padding-top: 4px;
   }
 }
@@ -59,7 +59,7 @@
   }
 
   @include mixins.desktop {
-    margin-bottom: 38px;
+    margin-bottom: 40px;
   }
 }
 
@@ -82,7 +82,7 @@
   }
 
   @include mixins.desktop {
-    gap: 30px;
+    gap: 22px;
   }
 }
 
@@ -111,7 +111,9 @@
   }
 
   @include mixins.desktop {
-    padding: 14px 26px;
+    min-height: 46px;
+    min-width: 120px;
+    padding: 14px 12px;
   }
 
   &:hover {
@@ -173,7 +175,7 @@
   }
 }
 
-.news__slider .news__item {
+.news__slider .news__item:not(.news__item--active) {
   @include mixins.mobile {
     width: 290px;
     min-height: 330px;
@@ -199,6 +201,21 @@
   }
 }
 
+.news__item.news__item--active,
+.news__item.news__item--prev {
+  @include mixins.mobile {
+    width: 290px;
+  }
+
+  @include mixins.tablet {
+    width: 324px;
+  }
+
+  @include mixins.desktop {
+    width: 604px;
+  }
+}
+
 .news__item--active,
 .news__item--prev {
   & .news__content-wrapper {
@@ -211,13 +228,11 @@
     }
 
     @include mixins.desktop {
-      max-width: 405px;
+      max-width: 484px;
     }
   }
 
   @include mixins.mobile {
-    width: 290px;
-
     & .news__image-wrapper {
       display: block;
     }
@@ -228,8 +243,6 @@
   }
 
   @include mixins.tablet {
-    width: 324px;
-
     & .news__image-wrapper {
       display: block;
     }
@@ -240,8 +253,6 @@
   }
 
   @include mixins.desktop {
-    width: 604px;
-
     & .news__image-wrapper {
       display: none;
     }
@@ -343,6 +354,7 @@
   }
 
   @include mixins.desktop {
+    padding-top: 14px;
     max-width: 182px;
   }
 }
@@ -384,8 +396,8 @@
   @include mixins.desktop {
     @include mixins.font-info(24px, 26px);
 
-    max-width: 214px;
-    padding: 5px 10px 0 0;
+    max-width: 190px;
+    padding: 10px 10px 4px 0;
   }
 }
 
@@ -407,8 +419,8 @@
   }
 
   @include mixins.desktop {
-    max-width: 291px;
-    padding: 13px 18px 2px 0;
+    max-width: 426px;
+    padding: 18px 18px 6px 0;
   }
 }
 
@@ -442,7 +454,8 @@
   }
 
   @include mixins.desktop {
-    padding: 9px 18px 12px 0;
+    gap: 10px;
+    padding: 12px 18px 7px 0;
   }
 }
 
