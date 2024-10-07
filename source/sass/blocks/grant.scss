@@ -58,7 +58,7 @@
   }
 
   @include mixins.tablet {
-    gap: 28px;
+    gap: 31px;
 
     & p {
       @include mixins.font-info(16px, 20px);
@@ -126,7 +126,7 @@
 
   @include mixins.tablet {
     margin-top: 5px;
-    gap: 42px;
+    gap: 45px;
   }
 
   @include mixins.desktop {
@@ -168,7 +168,7 @@
     display: grid;
     grid-template-columns: 46.3% 46.4%;
     row-gap: 25px;
-    column-gap: 47px;
+    column-gap: 48px;
   }
 
   @include mixins.desktop {
@@ -218,7 +218,7 @@
   }
 
   @include mixins.tablet {
-    padding: 25px 15px 25px 23px;
+    padding: 30px 15px 30px 25px;
 
     &::after {
       @include mixins.font-info(22px, 22px, 500);
